@@ -24,7 +24,8 @@ export default {
   modules: [],
   build: {},
   googleFonts: {
-    display: "swap",
+    display: "fallback",
+    useStylesheet: true,
     families: {
       "DM+Serif+Display": true,
       "DM+Sans": [400, 500, 700]
