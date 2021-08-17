@@ -908,6 +908,16 @@
   resolved "https://registry.npmjs.org/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
+"@fontsource/dm-sans@^4.5.0":
+  version "4.5.0"
+  resolved "https://registry.npmjs.org/@fontsource/dm-sans/-/dm-sans-4.5.0.tgz#0dae7ab3563b3ffd47181a3fa4c9c6a33fb04c5e"
+  integrity sha512-GKsjzK7NU6G1NHAxXRCquZQmZSvj3ah5AMR4N6PU2YpshIpr+NLIwYc+SJty+ZJ4Btysr9KN40+X4ng34heGjw==
+
+"@fontsource/dm-serif-display@^4.5.0":
+  version "4.5.0"
+  resolved "https://registry.npmjs.org/@fontsource/dm-serif-display/-/dm-serif-display-4.5.0.tgz#255322e3bde35e9f11812b7affbe4d9395f59212"
+  integrity sha512-iFUuJ8m3GRpH+ZK8xYKtAj+X7LVn3mdpDbh+lqzPBRbRhwlQkM0AjTXtHwHe7CrD6JGbGrk1kHSCCQJt2IRmfg==
+
 "@koa/router@^9.0.1":
   version "9.4.0"
   resolved "https://registry.npmjs.org/@koa/router/-/router-9.4.0.tgz#734b64c0ae566eb5af752df71e4143edc4748e48"
