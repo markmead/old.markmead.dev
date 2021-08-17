@@ -1,9 +1,9 @@
 <template>
   <article>
-    <div class="container py-16 sm:py-32 space-y-12">
-      <h1 class="font-serif text-5xl sm:text-8xl text-center" v-text="blog.title" />
+    <div class="container py-16 space-y-12 sm:py-32">
+      <h1 class="font-serif text-5xl text-center sm:text-8xl" v-text="blog.title" />
 
-      <nuxt-content class="prose prose-2xl font-medium mx-auto" :document="blog" />
+      <nuxt-content class="mx-auto font-medium prose prose-lg sm:prose-2xl" :document="blog" />
     </div>
   </article>
 </template>
