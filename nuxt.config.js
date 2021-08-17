@@ -11,30 +11,25 @@ export default {
       { hid: "description", name: "description", content: "" },
       { name: "format-detection", content: "telephone=no" }
     ],
-    link: [
-      { rel: "icon", type: "image/png", href: "/favicon.png" },
-      {
-        rel: "preconnect",
-        href: "https://fonts.googleapis.com"
-      },
-      {
-        rel: "preconnect",
-        crossorigin: true,
-        href: "https://fonts.gstatic.com"
-      },
-      {
-        rel: "stylehseet",
-        href:
-          "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap"
-      }
-    ]
+    link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }]
   },
   css: [],
   plugins: [],
   components: true,
-  buildModules: ["@nuxtjs/tailwindcss", "@nuxt/content"],
+  buildModules: [
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/google-fonts",
+    "@nuxt/content"
+  ],
   modules: [],
   build: {},
+  googleFonts: {
+    display: "swap",
+    families: {
+      "DM+Serif+Display": true,
+      "DM+Sans": [400, 500, 700]
+    }
+  },
   content: {
     markdown: {
       prism: {
