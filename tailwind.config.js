@@ -24,7 +24,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["DM Sans", ...defaultTheme.fontFamily.sans],
-        serif: ["DM Serif Text", ...defaultTheme.fontFamily.serif]
+        serif: ["DM Serif Display", ...defaultTheme.fontFamily.serif]
       },
       colors: {
         teal: colors.teal
