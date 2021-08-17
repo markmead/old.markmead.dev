@@ -14,7 +14,7 @@ export default {
     link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }]
   },
   css: [],
-  plugins: ["~/plugins/font.js"],
+  plugins: [],
   components: true,
   buildModules: [
     "@nuxtjs/tailwindcss",
@@ -23,14 +23,14 @@ export default {
   ],
   modules: [],
   build: {},
-  // googleFonts: {
-  //   display: "fallback",
-  //   useStylesheet: true,
-  //   families: {
-  //     "DM+Serif+Display": true,
-  //     "DM+Sans": [400, 500, 700]
-  //   }
-  // },
+  googleFonts: {
+    display: "swap",
+    useStylesheet: true,
+    families: {
+      "DM+Serif+Display": true,
+      "DM+Sans": [400, 500, 700]
+    }
+  },
   content: {
     markdown: {
       prism: {

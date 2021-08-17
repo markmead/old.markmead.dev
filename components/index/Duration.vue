@@ -3,9 +3,11 @@
 </template>
 
 <script>
-const dayjs = require('dayjs')
-const relativeTime = require('dayjs/plugin/relativeTime')
+import dayjs from 'dayjs'
+import customParseFormat from 'dayjs/plugin/customParseFormat'
+import relativeTime from 'dayjs/plugin/relativeTime'
 
+dayjs.extend(customParseFormat)
 dayjs.extend(relativeTime)
 
 export default {
@@ -17,8 +19,8 @@ export default {
   },
   computed: {
     seconds() {
-      const end = dayjs(new Date())
-      const start = dayjs(this.time)
+      const end = dayjs()
+      const start = dayjs(this.time, "DD-MM-YYYY")
 
       return end.diff(start, 's')
     }
