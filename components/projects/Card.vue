@@ -1,7 +1,7 @@
 <template>
   <nuxt-link
     :to="{ name: 'projects-slug', params: { slug: slug } }"
-    class="h-[500px] rounded-lg p-8 flex items-center justify-center hover:shadow-xl transition"
+    class="h-[300px] sm:h-[500px] rounded-lg p-8 flex items-center justify-center hover:shadow-xl transition"
     :class="branding"
   >
     <div class="mx-auto text-center">
