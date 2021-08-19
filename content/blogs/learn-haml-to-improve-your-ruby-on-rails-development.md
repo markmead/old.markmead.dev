@@ -79,19 +79,19 @@ It will also set the default view file template to HAML, meaning Ruby on Rails g
 
 / <p> tag with multi line of content
 %p
-    Hello world, how are you today? I'm doing just fine, especially when I'm writing HAML.
+  Hello world, how are you today? I'm doing just fine, especially when I'm writing HAML.
     
 / <h1> tag with <br> inside it
 %h1
-    Hello
-    %br/
-    World
+  Hello
+  %br/
+  World
     
 / <h1> tag with a non-HTML element inside it
 %h1
-    Hello
-    \-
-    World
+  Hello
+  \-
+  World
 ```
 
 ### Writing Ruby on Rails Code in HAML
@@ -108,11 +108,11 @@ It will also set the default view file template to HAML, meaning Ruby on Rails g
 
 / HTML content (usually from a WYSIWYG)
 %div
-!= @project.body
+  != @project.body
 
 / Loop
 - @project.tags.each do |tag|
-%span= tag
+  %span= tag
 
 / Conditional content (if/else)
 - if @project.author_image?
@@ -150,6 +150,7 @@ I'd say most developers would have used HTML but how many have used HAML? This c
 ```
 
 **HTML**
+
 ```html
 <div
   data-controller="map"
@@ -162,7 +163,6 @@ I'd say most developers would have used HTML but how many have used HAML? This c
 
 ### Readability Issues with Tailwind CSS
 
-**HAML**
 ```haml
 %section.bg-gray-900
   .max-w-5xl.mx-auto.px-4.py-24(class="sm:px-6 lg:px-8")
