@@ -1,5 +1,5 @@
 ---
-title: Learn HAML to Improve Your Ruby on Rails Development
+title: Learn HAML in 5 Minutes
 category: Rails
 published: true
 ---
