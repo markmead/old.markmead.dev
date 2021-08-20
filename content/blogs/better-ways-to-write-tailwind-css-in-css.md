@@ -72,6 +72,7 @@ I've found two approaches that solve the issue of "Can become very long" when us
   @apply text-sm font-semibold tracking-wider uppercase;
   @apply rounded-lg;
 }
+```
 
 This has full support and when written correctly will help you read and write Tailwind CSS in CSS faster.
 
