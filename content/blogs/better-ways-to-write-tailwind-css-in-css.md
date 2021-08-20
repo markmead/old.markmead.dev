@@ -1,5 +1,5 @@
 ---
-title: Better Ways to Write CSS with Tailwind CSS
+title: Better Ways to Write Tailwind CSS in CSS
 category: Tailwind CSS
 published: true
 ---
