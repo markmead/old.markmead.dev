@@ -23,7 +23,7 @@
 <script>
 export default {
   async asyncData({ $content }) {
-    const blogs = await $content('blogs').where({ published: true }).fetch()
+    const blogs = await $content('blogs').where({ published: true }).sortBy('title').fetch()
 
     return { blogs }
   }

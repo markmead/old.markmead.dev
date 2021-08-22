@@ -1,5 +1,5 @@
 ---
-title: How to Add Conic Gradients to Tailwind CSS
+title: Adding Conic Gradients to Tailwind CSS
 category: Tailwind CSS
 published: true
 ---
@@ -13,7 +13,6 @@ From MDN:
 > `conic-gradient()` CSS function creates an image consisting of a gradient with color transitions rotated around a center point
 
 This is not something that's likely to be a default in Tailwind CSS so we need to add it ourselves.
-
 
 And the following to your `tailwind.config.js` file:
 
