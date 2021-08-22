@@ -19,7 +19,8 @@ export default {
   buildModules: [
     "@nuxtjs/tailwindcss",
     "@nuxtjs/google-fonts",
-    "@nuxt/content"
+    "@nuxt/content",
+    "@nuxtjs/google-analytics"
   ],
   modules: [],
   build: {},
@@ -36,5 +37,9 @@ export default {
         theme: false
       }
     }
+  },
+  googleAnalytics: {
+    id: "UA-177960351-3",
+    checkDuplicatedScript: true
   }
 };
