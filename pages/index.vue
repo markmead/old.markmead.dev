@@ -18,11 +18,11 @@
       </p>
 
       <p>
-        I also sell products on <index-external-link url="https://markmead.gumroad.com/" text="Gumroad" />, most notably <index-external-link url="https://www.hyperui.dev/" text="HyperUI" /> and <index-external-link url="https://hypercolor.dev/" text="Hypercolor" />, but there’s also a range of development tutorials featuring Ruby on Rails and Tailwind CSS.
+        I work on two open source projects <index-external-link url="https://www.hyperui.dev/" text="HyperUI" /> a component library for Tailwind CSS and <index-external-link url="https://hypercolor.dev/" text="Hypercolor" /> a gradient library for Tailwind CSS.
       </p>
 
       <p>
-        You can follow me on <index-external-link url="https://twitter.com/itsmarkmead" text="Twitter" /> where I post the odd tweet, but I mostly just try to sell my Gumroad products.
+        You can follow me on <index-external-link url="https://twitter.com/itsmarkmead" text="Twitter" /> where I post about development and announce new features and blogs.
       </p>
     </div>
   </article>

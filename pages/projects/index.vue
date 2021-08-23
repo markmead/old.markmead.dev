@@ -7,7 +7,7 @@
         </h1>
 
         <p class="mt-12 text-2xl font-medium leading-tight sm:text-5xl sm:leading-tight">
-          I have built and deployed over 150 websites. I can't show all of them so here's my featured ones.
+          I have built, deployed and maintained over 150 websites. Here's the few that I'm featuring.
         </p>
       </div>
     </section>
