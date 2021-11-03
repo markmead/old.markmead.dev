@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+  <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
     <blogs-card
       v-for="blog of blogs"
       :title="blog.title"
@@ -18,5 +18,5 @@ export default {
       required: true
     }
   }
-}
+};
 </script>

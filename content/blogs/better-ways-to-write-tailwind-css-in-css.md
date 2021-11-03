@@ -9,7 +9,7 @@ There may come a point when you're using Tailwind CSS that you need to write CSS
 There's a few approaches to writting CSS in Tailwind CSS:
 
 1. Write custom CSS
-2. Write Tailwind CSS classes with `theme()` 
+2. Write Tailwind CSS classes with `theme()`
 3. Write Tailwind CSS classes with `@apply`
 
 I'm not a fan of `theme()` I think it looks messy in CSS files, so I will typically reach for `@apply` and then write custom CSS when needed.
@@ -80,10 +80,9 @@ This has full support and when written correctly will help you read and write Ta
 
 ```css
 .button {
-  @apply 
-    inline-flex justify-center items-center 
-    px-6 py-3 
-    text-sm font-semibold tracking-wider uppercase 
+  @apply inline-flex justify-center items-center
+    px-6 py-3
+    text-sm font-semibold tracking-wider uppercase
     rounded-lg;
 }
 ```
@@ -100,6 +99,6 @@ There's a simple approach I take when writting CSS with Tailwind CSS, it's all i
 4. **Style** `rounded-lg`
 5. **Transition** `transition-shadow`
 6. **State** `hover:shadow-xl focus:ring-2`
-7. **Other/Custom**  `background-image: url('...')`
+7. **Other/Custom** `background-image: url('...')`
 
 Write your Tailwind CSS like that in CSS files and you'll be fast and the code you write will be readable.

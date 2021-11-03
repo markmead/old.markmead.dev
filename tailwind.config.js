@@ -1,5 +1,4 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
-const colors = require("tailwindcss/colors");
 
 module.exports = {
   mode: "jit",
@@ -25,9 +24,6 @@ module.exports = {
       fontFamily: {
         sans: ["DM Sans", ...defaultTheme.fontFamily.sans],
         serif: ["DM Serif Display", ...defaultTheme.fontFamily.serif]
-      },
-      colors: {
-        teal: colors.teal
       }
     }
   },

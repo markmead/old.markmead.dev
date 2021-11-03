@@ -8,13 +8,13 @@ In short, HAML is a faster way to write HTML and is very common in Ruby on Rails
 
 ## How Does HAML Compare to HTML
 
-Review the following example and ask yourself, what's easier to read? 
+Review the following example and ask yourself, what's easier to read?
 
 I can confirm that the HAML example took less time to write.
 
 ```html
 <section class="banner">
-  <h1 class="banner__title"> 
+  <h1 class="banner__title">
     Hello World!
   </h1>
 
@@ -39,7 +39,7 @@ But HAML is slimmer, faster to write and gives you more time to focus on Ruby on
 
 It's easy to use HAML in Ruby on Rails, simply change `.html.erb` to `.html.haml` and you're set.
 
-If you need to convert an existing Ruby on Rails application to HAML you can use [haml-rails](https://rubygems.org/gems/haml-rails) to automatically convert your `.html.erb` files to `.html.haml` from the terminal. 
+If you need to convert an existing Ruby on Rails application to HAML you can use [haml-rails](https://rubygems.org/gems/haml-rails) to automatically convert your `.html.erb` files to `.html.haml` from the terminal.
 
 It will also set the default view file template to HAML, meaning Ruby on Rails generators like `rails g scaffold` will create `.html.haml` files.
 
@@ -49,12 +49,12 @@ It will also set the default view file template to HAML, meaning Ruby on Rails g
 
 ```haml
 / Single line comment
-    
+
 /
   Multi
   line
   comment
-      
+
 -# Comment that won't show up in the HTML
 ```
 
@@ -80,13 +80,13 @@ It will also set the default view file template to HAML, meaning Ruby on Rails g
 / <p> tag with multi line of content
 %p
   Hello world, how are you today? I'm doing just fine, especially when I'm writing HAML.
-    
+
 / <h1> tag with <br> inside it
 %h1
   Hello
   %br/
   World
-    
+
 / <h1> tag with a non-HTML element inside it
 %h1
   Hello
@@ -130,7 +130,7 @@ It will also set the default view file template to HAML, meaning Ruby on Rails g
 
 / Link
 = link_to("View project", project_path(project), class: "link")
-``` 
+```
 
 ## Why I Don't Use HAML
 

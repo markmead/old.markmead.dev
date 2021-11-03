@@ -10,56 +10,54 @@ As Tailwind CSS JIT isn't the go to for most users, I'll be showing both ways to
 
 ## Floating Label with Tailwind CSS (Pre v2.2 Update)
 
-The first piece of the puzzle is to add a new plugin to Tailwind CSS that allows you to target the sibling element. 
+The first piece of the puzzle is to add a new plugin to Tailwind CSS that allows you to target the sibling element.
 
 Thankfully, [this Stack Overflow answer](https://stackoverflow.com/a/65321069) has the solution that we need.
 
 ```js
-const plugin = require('tailwindcss/plugin')
+const plugin = require("tailwindcss/plugin");
 
-const focusedSiblingPlugin = plugin(function ({ addVariant, e }) {
-  addVariant('focused-sibling', ({ container }) => {
-    container.walkRules((rule) => {
-      rule.selector = `:focus + .focused-sibling\\:${rule.selector.slice(1)}`
-    })
-  })
-})
+const focusedSiblingPlugin = plugin(function({ addVariant, e }) {
+  addVariant("focused-sibling", ({ container }) => {
+    container.walkRules(rule => {
+      rule.selector = `:focus + .focused-sibling\\:${rule.selector.slice(1)}`;
+    });
+  });
+});
 
 module.exports = {
   variants: {
     extend: {
-      translate: ['focused-sibling', 'not-empty-sibling'],
-    },
+      translate: ["focused-sibling", "not-empty-sibling"]
+    }
   },
   plugins: [focusedSiblingPlugin]
-}
+};
 ```
 
 Next, we need a way to check if the `<input>` value is empty or not. For this, we can add another custom plugin.
 
 ```js
-const notEmptySiblingPlugin = plugin(function ({ addVariant }) {
-  addVariant('not-empty-sibling', ({ container }) => {
-    container.walkRules((rule) => {
-      rule.selector = `:not(:placeholder-shown) + .not-empty-sibling\\:${rule.selector.slice(1)}`
-    })
-  })
-})
+const notEmptySiblingPlugin = plugin(function({ addVariant }) {
+  addVariant("not-empty-sibling", ({ container }) => {
+    container.walkRules(rule => {
+      rule.selector = `:not(:placeholder-shown) + .not-empty-sibling\\:${rule.selector.slice(
+        1
+      )}`;
+    });
+  });
+});
 ```
 
 All this together allows you to write the following HTML to create a floating label.
 
 ```html
 <div class="relative">
-  <input 
-    type="text" 
-    id="name" 
-    placeholder="Name" 
-   />
+  <input type="text" id="name" placeholder="Name" />
 
-  <label 
-    for="name" 
-    class="not-empty-sibling:-translate-y-12 focused-sibling:-translate-y-12 absolute top-1/2 left-2 transform -translate-y-1/2 transition-transform"
+  <label
+    for="name"
+    class="absolute transition-transform transform -translate-y-1/2 not-empty-sibling:-translate-y-12 focused-sibling:-translate-y-12 top-1/2 left-2"
   >
     Name
   </label>
@@ -73,19 +71,12 @@ There's another issue as this requires the `<input>` to have a placeholder, even
 If you're not a fan of this approach then I'd recommend combining the first plugin `focusedSibling` and JavaScript. I'd advise using Apline JS for this.
 
 ```html
-<div 
-  class="relative" 
-  x-data="{ name: '' }"
->
-  <input 
-    type="text" 
-    id="name" 
-    x-model="name" 
-  />
+<div class="relative" x-data="{ name: '' }">
+  <input type="text" id="name" x-model="name" />
 
-  <label 
-    for="name" 
-    class="focused-sibling:-translate-y-12 absolute top-1/2 left-2 transform transition-transform"
+  <label
+    for="name"
+    class="absolute transition-transform transform focused-sibling:-translate-y-12 top-1/2 left-2"
     :class="{ '-translate-y-12': name, '-translate-y-1/2': !name }"
   >
     Name
