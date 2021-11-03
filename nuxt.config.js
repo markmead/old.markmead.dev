@@ -7,7 +7,6 @@ const constructFeedItem = (post, dir, hostname) => {
     title: post.title,
     id: url,
     link: url,
-    category: post.categories,
     content: post.bodyPlainText,
   }
 }

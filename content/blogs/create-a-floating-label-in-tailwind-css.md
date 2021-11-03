@@ -1,6 +1,6 @@
 ---
 title: Create a Floating Label in Tailwind CSS
-categories: ["Tailwind CSS", "CSS", "Frontend", "Forms"]
+category: Tailwind CSS
 published: false
 ---
 
@@ -15,38 +15,38 @@ The first piece of the puzzle is to add a new plugin to Tailwind CSS that allows
 Thankfully, [this Stack Overflow answer](https://stackoverflow.com/a/65321069) has the solution that we need.
 
 ```js
-const plugin = require("tailwindcss/plugin");
+const plugin = require('tailwindcss/plugin')
 
 const focusedSiblingPlugin = plugin(function({ addVariant, e }) {
-  addVariant("focused-sibling", ({ container }) => {
+  addVariant('focused-sibling', ({ container }) => {
     container.walkRules(rule => {
-      rule.selector = `:focus + .focused-sibling\\:${rule.selector.slice(1)}`;
-    });
-  });
-});
+      rule.selector = `:focus + .focused-sibling\\:${rule.selector.slice(1)}`
+    })
+  })
+})
 
 module.exports = {
   variants: {
     extend: {
-      translate: ["focused-sibling", "not-empty-sibling"]
-    }
+      translate: ['focused-sibling', 'not-empty-sibling'],
+    },
   },
-  plugins: [focusedSiblingPlugin]
-};
+  plugins: [focusedSiblingPlugin],
+}
 ```
 
 Next, we need a way to check if the `<input>` value is empty or not. For this, we can add another custom plugin.
 
 ```js
 const notEmptySiblingPlugin = plugin(function({ addVariant }) {
-  addVariant("not-empty-sibling", ({ container }) => {
+  addVariant('not-empty-sibling', ({ container }) => {
     container.walkRules(rule => {
       rule.selector = `:not(:placeholder-shown) + .not-empty-sibling\\:${rule.selector.slice(
         1
-      )}`;
-    });
-  });
-});
+      )}`
+    })
+  })
+})
 ```
 
 All this together allows you to write the following HTML to create a floating label.

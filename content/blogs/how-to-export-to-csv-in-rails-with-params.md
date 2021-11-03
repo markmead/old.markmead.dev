@@ -1,6 +1,6 @@
 ---
 title: How to Export a Filtered CSV in Ruby on Rails
-categories: ["Ruby", "Ruby on Rails", "CSV", "Tutorial"]
+category: Rails
 published: true
 ---
 

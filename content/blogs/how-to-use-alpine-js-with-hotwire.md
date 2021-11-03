@@ -1,6 +1,6 @@
 ---
 title: How to Use Apline JS with Hotwire and Turbo
-categories: ["Rails", "Ruby on Rails", "Alpine", "Hotwire"]
+category: Rails
 published: true
 ---
 

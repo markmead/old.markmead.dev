@@ -3,11 +3,9 @@
     :to="{ name: 'blogs-slug', params: { slug: slug } }"
     class="block px-8 pt-24 pb-8 text-red-900 transition bg-red-100 rounded-lg hover:bg-red-50 hover:shadow-sm"
   >
-    <div>
-      <p class="text-sm font-medium" v-text="category" />
+    <p class="text-sm font-medium" v-text="category" />
 
-      <h2 class="mt-4 text-xl font-medium sm:text-2xl" v-text="title" />
-    </div>
+    <h2 class="mt-4 text-xl font-medium sm:text-2xl" v-text="title" />
   </nuxt-link>
 </template>
 
@@ -16,16 +14,16 @@ export default {
   props: {
     title: {
       type: String,
-      required: true
+      required: true,
     },
     category: {
       type: String,
-      required: true
+      required: true,
     },
     slug: {
       type: String,
-      required: true
-    }
-  }
-};
+      required: true,
+    },
+  },
+}
 </script>

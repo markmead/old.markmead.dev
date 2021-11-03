@@ -1,6 +1,6 @@
 ---
 title: Adding Radial Gradients to Tailwind CSS
-categories: ["Tailwind CSS", "CSS", "Frontend", "Gradients"]
+category: Tailwind CSS
 published: true
 ---
 

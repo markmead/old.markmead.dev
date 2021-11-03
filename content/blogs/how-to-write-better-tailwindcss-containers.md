@@ -1,6 +1,6 @@
 ---
 title: How to Write Better Tailwind CSS Containers
-categories: ["Tailwind CSS", "CSS", "Frontend", "Tutorial"]
+category: Tailwind CSS
 published: true
 ---
 

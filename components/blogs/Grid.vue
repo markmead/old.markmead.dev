@@ -15,8 +15,8 @@ export default {
   props: {
     blogs: {
       type: Array,
-      required: true
-    }
-  }
-};
+      required: true,
+    },
+  },
+}
 </script>

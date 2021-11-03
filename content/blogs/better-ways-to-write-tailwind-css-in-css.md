@@ -1,6 +1,6 @@
 ---
 title: Better Ways to Write Tailwind CSS in CSS
-categories: ["Tailwind CSS", "CSS", "Frontend", "Tutorial"]
+category: Tailwind CSS
 published: true
 ---
 
@@ -23,12 +23,12 @@ Here's an example of creating a `.button` class in Tailwind CSS that sets up a d
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: theme("spacing.3") theme("spacing.6");
-  font-size: theme("fontSize.sm");
-  font-weight: theme("fontWeight.semibold");
-  letter-spacing: theme("letterSpacing.wider");
+  padding: theme('spacing.3') theme('spacing.6');
+  font-size: theme('fontSize.sm');
+  font-weight: theme('fontWeight.semibold');
+  letter-spacing: theme('letterSpacing.wider');
   text-transform: uppercase;
-  border-radius: theme("borderRadius.lg");
+  border-radius: theme('borderRadius.lg');
 }
 ```
 
