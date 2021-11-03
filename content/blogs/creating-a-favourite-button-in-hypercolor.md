@@ -1,6 +1,6 @@
 ---
 title: Creating a Favourite Button in Hypercolor with GitHub Copilot
-category: Vue
+categories: ["Vue", "JavaScript", "GitHub", "GitHub Copilot"]
 published: false
 ---
 

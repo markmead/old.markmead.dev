@@ -1,38 +1,39 @@
-// const fs = require("fs").promises;
-// const path = require("path");
-
 let posts = [];
 
 const constructFeedItem = (post, dir, hostname) => {
   const url = `${hostname}/${dir}/${post.slug}`;
+
   return {
     title: post.title,
     id: url,
     link: url,
-    description: post.description,
+    category: post.categories,
     content: post.bodyPlainText
   };
 };
 
 const create = async (feed, args) => {
+  const { $content } = require("@nuxt/content");
   const [filePath, ext] = args;
-  const hostname =
-    process.NODE_ENV === "production"
-      ? "https://markmead.dev"
-      : "http://localhost:3000";
+  const hostname = "https://markmead.dev";
+
   feed.options = {
-    title: "My Blog",
-    description: "Blog Stuff!",
+    title: "Development Blogs",
+    description: "Short and to the point development blogs.",
     link: `${hostname}/feed.${ext}`
   };
-  const { $content } = require("@nuxt/content");
-  if (posts === null || posts.length === 0)
-    posts = await $content(filePath).fetch();
+
+  posts = await $content(filePath)
+    .where({ published: true })
+    .sortBy("title")
+    .fetch();
 
   for (const post of posts) {
     const feedItem = await constructFeedItem(post, filePath, hostname);
+
     feed.addItem(feedItem);
   }
+
   return feed;
 };
 

@@ -1,6 +1,6 @@
 ---
 title: Popout Shadow with the Tailwind CSS JIT (v2.2)
-category: Tailwind CSS
+categories: ["Tailwind CSS", "CSS", "Frontend", "JIT"]
 published: true
 ---
 

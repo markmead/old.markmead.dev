@@ -1,6 +1,6 @@
 ---
 title: Learn HAML in 5 Minutes
-category: Rails
+categories: ["Ruby on Rails", "HAML", "HTML", "Tutorial"]
 published: true
 ---
 

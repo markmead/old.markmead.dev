@@ -6,8 +6,11 @@
           Development Blogs
         </h1>
 
-        <p class="mt-12 text-2xl font-medium leading-tight sm:text-5xl sm:leading-tight">
-          I don't like long blog posts, so here you will find short, to the point blogs that will enhance your skill set.
+        <p
+          class="mt-12 text-2xl font-medium leading-tight sm:text-5xl sm:leading-tight"
+        >
+          I don't like long blog posts, so here you will find short, to the
+          point blogs that will enhance your skill set.
         </p>
       </div>
     </section>
@@ -23,9 +26,12 @@
 <script>
 export default {
   async asyncData({ $content }) {
-    const blogs = await $content('blogs').where({ published: true }).sortBy('title').fetch()
+    const blogs = await $content("blogs")
+      .where({ published: true })
+      .sortBy("title")
+      .fetch();
 
-    return { blogs }
+    return { blogs };
   }
-}
+};
 </script>

@@ -1,6 +1,6 @@
 ---
 title: Create a Floating Label in Tailwind CSS
-category: Tailwind CSS
+categories: ["Tailwind CSS", "CSS", "Frontend", "Forms"]
 published: false
 ---
 

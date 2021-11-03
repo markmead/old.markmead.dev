@@ -1,6 +1,6 @@
 ---
 title: Better Ways to Write Tailwind CSS in CSS
-category: Tailwind CSS
+categories: ["Tailwind CSS", "CSS", "Frontend", "Tutorial"]
 published: true
 ---
 

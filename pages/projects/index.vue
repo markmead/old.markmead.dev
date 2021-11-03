@@ -6,8 +6,11 @@
           Featured Projects
         </h1>
 
-        <p class="mt-12 text-2xl font-medium leading-tight sm:text-5xl sm:leading-tight">
-          I have built, deployed and maintained over 150 websites. Here's the few that I'm featuring.
+        <p
+          class="mt-12 text-2xl font-medium leading-tight sm:text-5xl sm:leading-tight"
+        >
+          I have built, deployed and maintained over 150 websites. Here's the
+          few that I'm featuring.
         </p>
       </div>
     </section>
@@ -23,9 +26,9 @@
 <script>
 export default {
   async asyncData({ $content }) {
-    const projects = await $content('projects').fetch()
+    const projects = await $content("projects").fetch();
 
-    return { projects }
+    return { projects };
   }
-}
+};
 </script>
