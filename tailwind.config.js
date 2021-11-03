@@ -1,34 +1,34 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  mode: "jit",
+  mode: 'jit',
   purge: [
-    "components/**/*.{vue,js}",
-    "layouts/**/*.vue",
-    "pages/**/*.vue",
-    "plugins/**/*.{js,ts}",
-    "nuxt.config.{js,ts}",
-    "content/**/*.md"
+    'components/**/*.{vue,js}',
+    'layouts/**/*.vue',
+    'pages/**/*.vue',
+    'plugins/**/*.{js,ts}',
+    'nuxt.config.{js,ts}',
+    'content/**/*.md',
   ],
   darkMode: true,
   theme: {
     container: {
       center: true,
       padding: {
-        DEFAULT: "1rem",
-        sm: "1.5rem",
-        lg: "2rem"
-      }
+        DEFAULT: '1rem',
+        sm: '1.5rem',
+        lg: '2rem',
+      },
     },
     extend: {
       fontFamily: {
-        sans: ["DM Sans", ...defaultTheme.fontFamily.sans],
-        serif: ["DM Serif Display", ...defaultTheme.fontFamily.serif]
-      }
-    }
+        sans: ['DM Sans', ...defaultTheme.fontFamily.sans],
+        serif: ['DM Serif Display', ...defaultTheme.fontFamily.serif],
+      },
+    },
   },
   variants: {
-    extend: {}
+    extend: {},
   },
-  plugins: [require("@tailwindcss/typography")]
-};
+  plugins: [require('@tailwindcss/typography')],
+}
