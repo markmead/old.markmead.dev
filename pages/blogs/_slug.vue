@@ -7,7 +7,7 @@
       />
 
       <nuxt-content
-        class="mx-auto font-medium prose prose-lg sm:prose-2xl"
+        class="max-w-4xl mx-auto font-medium prose prose-lg sm:prose-2xl"
         :document="blog"
       />
     </div>
@@ -17,10 +17,10 @@
 <script>
 export default {
   async asyncData({ $content, params }) {
-    const { slug } = params;
-    const blog = await $content("blogs", slug).fetch();
+    const { slug } = params
+    const blog = await $content('blogs', slug).fetch()
 
-    return { blog };
-  }
-};
+    return { blog }
+  },
+}
 </script>

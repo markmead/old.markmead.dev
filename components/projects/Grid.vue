@@ -16,8 +16,8 @@ export default {
   props: {
     projects: {
       type: Array,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>

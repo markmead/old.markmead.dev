@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-red-50 text-gray-900">
+  <div class="text-gray-900 bg-rose-50">
     <shared-header />
 
     <main>

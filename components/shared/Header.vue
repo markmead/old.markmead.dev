@@ -1,7 +1,10 @@
 <template>
-  <header class="sticky inset-x-0 top-0 z-50 bg-red-50/75 backdrop-blur">
+  <header class="sticky inset-x-0 top-0 z-50 bg-rose-50">
     <div class="container flex items-center justify-between h-16">
-      <nuxt-link :to="{ name: 'index' }" class="text-xl font-bold tracking-tighter">
+      <nuxt-link
+        :to="{ name: 'index' }"
+        class="text-xl font-bold tracking-tighter"
+      >
         Mark Mead
       </nuxt-link>
 

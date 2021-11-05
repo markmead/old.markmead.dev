@@ -1,15 +1,19 @@
 <template>
   <nuxt-link
     :to="{ name: 'blogs-slug', params: { slug: slug } }"
-    class="block px-8 pt-24 pb-8 text-red-900 transition bg-red-100 rounded-lg hover:bg-red-50 hover:shadow-sm"
+    class="relative block px-8 pt-24 pb-8 overflow-hidden transition rounded-lg bg-rose-100/50 hover:scale-105"
   >
     <p class="text-sm font-medium" v-text="category" />
 
     <h2 class="mt-4 text-xl font-medium sm:text-2xl" v-text="title" />
+
+    <span class="absolute inset-x-0 bottom-0 h-1" :class="color"></span>
   </nuxt-link>
 </template>
 
 <script>
+import { colors } from '@/utils/colors'
+
 export default {
   props: {
     title: {
@@ -23,6 +27,11 @@ export default {
     slug: {
       type: String,
       required: true,
+    },
+  },
+  computed: {
+    color() {
+      return colors[this.category]
     },
   },
 }

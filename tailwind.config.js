@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+const colors = require('tailwindcss/colors')
 
 module.exports = {
   mode: 'jit',
@@ -9,6 +10,7 @@ module.exports = {
     'plugins/**/*.{js,ts}',
     'nuxt.config.{js,ts}',
     'content/**/*.md',
+    'utils/*.js',
   ],
   darkMode: true,
   theme: {
@@ -24,6 +26,9 @@ module.exports = {
       fontFamily: {
         sans: ['DM Sans', ...defaultTheme.fontFamily.sans],
         serif: ['DM Serif Display', ...defaultTheme.fontFamily.serif],
+      },
+      colors: {
+        ...colors,
       },
     },
   },

@@ -1,6 +1,6 @@
 ---
 title: Learn HAML in 5 Minutes
-category: Rails
+category: Ruby on Rails
 published: true
 ---
 
