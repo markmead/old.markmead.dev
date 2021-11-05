@@ -26,12 +26,24 @@
 <script>
 export default {
   async asyncData({ $content }) {
-    const blogs = await $content("blogs")
+    const blogs = await $content('blogs')
       .where({ published: true })
-      .sortBy("title")
-      .fetch();
+      .sortBy('title')
+      .fetch()
 
-    return { blogs };
-  }
-};
+    return { blogs }
+  },
+  head() {
+    return {
+      title: 'Development Blog',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Short, informative blog posts for developers.',
+        },
+      ],
+    }
+  },
+}
 </script>

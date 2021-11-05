@@ -26,9 +26,21 @@
 <script>
 export default {
   async asyncData({ $content }) {
-    const projects = await $content("projects").fetch();
+    const projects = await $content('projects').fetch()
 
-    return { projects };
-  }
-};
+    return { projects }
+  },
+  head() {
+    return {
+      title: 'Development Projects',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Featured projects that I have worked on.',
+        },
+      ],
+    }
+  },
+}
 </script>

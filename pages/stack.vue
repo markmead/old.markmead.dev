@@ -66,3 +66,20 @@
     </p>
   </page-content>
 </template>
+
+<script>
+export default {
+  head() {
+    return {
+      title: 'Tech Stack',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'What I use to achieve the goals of my clients and myself.',
+        },
+      ],
+    }
+  },
+}
+</script>

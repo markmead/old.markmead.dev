@@ -23,10 +23,15 @@
 <script>
 export default {
   async asyncData({ $content, params }) {
-    const { slug } = params;
-    const project = await $content("projects", slug).fetch();
+    const { slug } = params
+    const project = await $content('projects', slug).fetch()
 
-    return { project };
-  }
-};
+    return { project }
+  },
+  head() {
+    return {
+      title: this.project.title,
+    }
+  },
+}
 </script>

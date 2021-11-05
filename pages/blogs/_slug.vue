@@ -22,5 +22,10 @@ export default {
 
     return { blog }
   },
+  head() {
+    return {
+      title: this.blog.title,
+    }
+  },
 }
 </script>

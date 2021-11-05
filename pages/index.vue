@@ -40,3 +40,13 @@
     </p>
   </page-content>
 </template>
+
+<script>
+export default {
+  head() {
+    return {
+      title: 'Shopify Developer in the UK',
+    }
+  },
+}
+</script>
