@@ -1,21 +1,116 @@
 ---
 title: How to Auto Add Your Blogs to DEV.to with Nuxt
 category: Vue
-published: false
+published: true
 ---
 
-I adore DEV.to
+I adore DEV.to. It's an amazing platform that lets developers all around the world share knowledge and ideas.
 
-It's an amazing platform that lets developers all around the world share knowledge and ideas
+The "problem" with DEV.to as a content creator is that as much as it's nice seeing the views increase on DEV.to, you also want those views going to your personal website. This is especially the case if you are selling products through that website.
 
-The problem with DEV.to is you want traffic hitting your personal site but it's no fun copying and pasting a blog to DEV.to from your personal site
+This has lead to me in the past copy and pasting `.md` files into DEV.to. This works fine, but it's slow and DEV.to has a way of automating this.
 
-We can automate this with an RSS feed which we can implement with the `@nuxtjs/feed` module
+For this tutorial I will use my personal website that uses Nuxt JS as an example.
 
-Doing this we can pass DEV.to the RSS feed URL and it will import all the blogs from your website into DEV.to as a DRAFT post
+## Nuxt JS RSS Feed
 
-Then you can edit and publish
+First off, we need an RSS feed. The best way of doing this is with the `@nuxtjs/feed` module that you can install with:
 
-This also auto adds the "originaly published on yourwebsite.com" at the top and you can even set the URL of the blog on YOUR website as the canonical... This means something in SEO land
+```shell
+yarn add -D @nuxtjs/feed
+```
 
-So how to do it...
+For my website I am using the `@nuxtjs/content` module and therefore I need to make some adjustments to how the RSS feed is created. If you are not using that, then [check out the module docs](https://github.com/nuxt-community/feed-module#readme) for more examples.
+
+The config that was needed is based on the [integrating with @nuxtjs/feeed module](https://content.nuxtjs.org/integrations/).
+
+Here is the code used:
+
+```js
+// top of nuxt.config.js
+
+let posts = []
+
+const constructFeedItem = (post, dir, hostname) => {
+  const url = `${hostname}/${dir}/${post.slug}`
+
+  return {
+    title: post.title,
+    id: url,
+    link: url,
+    content: post.bodyPlainText,
+  }
+}
+
+const create = async (feed, args) => {
+  const { $content } = require('@nuxt/content')
+  const [filePath, ext] = args
+  const hostname = 'https://markmead.dev/'
+
+  feed.options = {
+    title: 'Development Blogs',
+    description: 'Short and to the point development blogs.',
+    link: `${hostname}/feed.${ext}`,
+  }
+
+  // only get posts that are published
+  // and order by title
+  posts = await $content(filePath)
+    .where({ published: true })
+    .sortBy('title')
+    .fetch()
+
+  for (const post of posts) {
+    const feedItem = await constructFeedItem(post, filePath, hostname)
+
+    feed.addItem(feedItem)
+  }
+
+  return feed
+}
+
+// build modules in nuxt.config.js
+// @nuxtjs/feed must come after @nuxtjs/content
+buildModules: [
+  ...
+  '@nuxt/content',
+  '@nuxtjs/feed',
+]
+
+// feed settings in nuxt.config.js
+feed: [
+  {
+    path: '/feed.xml',
+    create,
+    cacheTime: 1000 * 60 * 15,
+    type: 'rss2',
+    // these are values passed to the `create` function
+    data: ['blogs', 'xml'],
+  }
+]
+
+// hook settings in nuxt.config.js
+hooks: {
+  'content:file:beforeInsert': document => {
+    if (document.extension === '.md') {
+      document.bodyPlainText = document.text
+    }
+  }
+}
+```
+
+If this is hard to follow then it is basically a 1to1 of the documentation linked above, but also you can look at the [source code of my website](https://github.com/markmead/portfolio/blob/master/nuxt.config.js).
+
+## Automatically Deploy Blogs into DEV.to
+
+There's now an RSS feed we can share with DEV.to in the "Publishing to DEV Community from RSS" section found in [your account settings](https://dev.to/settings/extensions).
+
+You can then click "Fetch Feed Now" and head on over to your dashboard. If it worked you will see all of your posts in DEV.to.
+
+From here you'll want to edit the posts and adjust the formatting, the main issue comes with code sections. It's worth adding categories as well so you can increase the chance of your blog post being seen.
+
+There's some major benefits to handling posts this way:
+
+- Speed of uploading
+- Auto "originaly published on yourwebsite.com" at the top of the DEV.to post
+- You can use your website URL as the canonical URL

@@ -75,8 +75,8 @@ export default {
   buildModules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
-    '@nuxt/content',
     '@nuxtjs/google-analytics',
+    '@nuxt/content',
     '@nuxtjs/feed',
   ],
   modules: [],
