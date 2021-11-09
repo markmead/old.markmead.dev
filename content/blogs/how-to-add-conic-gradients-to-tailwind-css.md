@@ -14,7 +14,7 @@ From MDN:
 
 This is not something that's likely to be a default in Tailwind CSS so we need to add it ourselves.
 
-And the following to your `tailwind.config.js` file:
+Add the following to your `tailwind.config.js` file:
 
 ```js
 backgroundImage: {
