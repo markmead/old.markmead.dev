@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div
-      class="container flex items-center justify-center h-24 space-x-8 border-t border-black/10"
+      class="container flex items-center justify-center h-24 space-x-8 border-t  border-black/10"
     >
       <shared-social-link
         v-for="social of socials"

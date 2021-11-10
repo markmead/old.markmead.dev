@@ -9,4 +9,6 @@ export const colors = {
   Laravel: 'bg-purple-500',
   React: 'bg-blue-500',
   Vue: 'bg-green-500',
+  API: 'bg-blue-500',
+  Theme: 'bg-pink-500',
 }

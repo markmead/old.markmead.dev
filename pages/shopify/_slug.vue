@@ -6,7 +6,7 @@
 export default {
   async asyncData({ $content, params }) {
     const { slug } = params
-    const post = await $content('blogs', slug).fetch()
+    const post = await $content('shopify', slug).fetch()
 
     return { post }
   },

@@ -8,9 +8,10 @@
         Mark Mead
       </nuxt-link>
 
-      <nav role="navigation" class="flex space-x-8 font-medium">
+      <nav role="navigation" class="flex space-x-4 font-medium sm:space-x-8">
         <nuxt-link :to="{ name: 'projects' }">Projects</nuxt-link>
         <nuxt-link :to="{ name: 'blogs' }">Blogs</nuxt-link>
+        <nuxt-link :to="{ name: 'shopify' }">Shopify</nuxt-link>
       </nav>
     </div>
   </header>
