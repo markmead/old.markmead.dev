@@ -45,7 +45,7 @@ const create = async (feed, args) => {
 export default {
   target: 'static',
   head: {
-    titleTemplate: titleChunk => `${titleChunk} | Mark Mead`,
+    titleTemplate: (titleChunk) => `${titleChunk} | Mark Mead`,
     htmlAttrs: { lang: 'en' },
     meta: [
       { charset: 'utf-8' },
@@ -107,7 +107,7 @@ export default {
     },
   ],
   hooks: {
-    'content:file:beforeInsert': document => {
+    'content:file:beforeInsert': (document) => {
       if (document.extension === '.md') {
         document.bodyPlainText = document.text
       }
