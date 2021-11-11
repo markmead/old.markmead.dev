@@ -7,8 +7,7 @@
         <p
           class="mt-12 text-2xl font-medium leading-tight sm:text-5xl sm:leading-tight"
         >
-          I don't like long blog posts, so here you will find short, to the
-          point blogs that will enhance your skill set.
+          Here are some short, to the point Shopify guides that can be used as learning and reference resource.
         </p>
       </div>
     </section>

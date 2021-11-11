@@ -1,7 +1,7 @@
 <template>
   <nuxt-link
     :to="{ name: type, params: { slug: slug } }"
-    class="relative block px-8 pt-24 pb-8 overflow-hidden transition rounded-lg bg-rose-100/50 hover:scale-105"
+    class="relative block px-8 pt-24 pb-8 overflow-hidden transition rounded-lg bg-red-100/50 hover:scale-105"
   >
     <p class="text-sm font-medium" v-text="category" />
 
