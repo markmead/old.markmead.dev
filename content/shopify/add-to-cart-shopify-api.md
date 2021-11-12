@@ -22,10 +22,16 @@ fetch('/cart/add.js', {
   .catch((error) => console.error(error))
 ```
 
-The two values in the `cartData` object will need to be dynamic. This can be done a number of ways:
+The two values in the `cartData` object will need to be dynamic. This can be done in a number of ways:
 
-[Creating a JavaScript Function to Add to Cart](/shopify/javascript-add-to-cart-shopify-api)
+<nuxt-link to="javascript-add-to-cart-shopify-api">
+  Creating a JavaScript Function to Add to Cart
+</nuxt-link>
 
-[Using the Alpine JS Store to Manage Add to Cart](/shopify/alpine-add-to-cart-shopify-api)
+<br >
 
-I have preference towards the Alpine JS approach, but both work well.
+<nuxt-link to="alpine-add-to-cart-shopify-api">
+  Using the Alpine JS to Add to Cart with Shopify API
+</nuxt-link>
+
+I have a preference for the Alpine JS approach, but both work well.

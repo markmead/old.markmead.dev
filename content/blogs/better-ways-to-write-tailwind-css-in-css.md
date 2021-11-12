@@ -5,9 +5,9 @@ published: true
 code: false
 ---
 
-There may come a point when you're using Tailwind CSS that you need to write CSS. This is rare, especially since [Tailwind CSS JIT mode](https://tailwindcss.com/docs/just-in-time-mode) came out, allowing you to write Tailwind CSS classes that don't exist, but are created on build.
+There may come a point when you're using Tailwind CSS that you need to write CSS. This is rare, especially since [Tailwind CSS JIT mode](https://tailwindcss.com/docs/just-in-time-mode) came out, allowing you to write Tailwind CSS classes that don't exist but are created on the build.
 
-There's a few approaches to writting CSS in Tailwind CSS:
+There are a few approaches to writing CSS in Tailwind CSS:
 
 1. Write custom CSS
 2. Write Tailwind CSS classes with `theme()`
@@ -75,20 +75,21 @@ I've found two approaches that solve the issue of "Can become very long" when us
 }
 ```
 
-This has full support and when written correctly will help you read and write Tailwind CSS in CSS faster.
+This is fully supported and when written correctly will help you read and write Tailwind CSS in CSS faster.
 
 ### Stacking CSS
 
 ```css
 .button {
-  @apply inline-flex justify-center items-center
+  @apply 
+	inline-flex justify-center items-center
     px-6 py-3
     text-sm font-semibold tracking-wider uppercase
     rounded-lg;
 }
 ```
 
-This approach looks messy and CSS formatters will break it.
+This approach looks messy and when the CSS is formatted it will undo the changes.
 
 ### How to Order CSS in Tailwind CSS
 

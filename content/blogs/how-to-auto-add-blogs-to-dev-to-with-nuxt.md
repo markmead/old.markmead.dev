@@ -9,9 +9,9 @@ I adore DEV.to. It's an amazing platform that lets developers all around the wor
 
 The "problem" with DEV.to as a content creator is that as much as it's nice seeing the views increase on DEV.to, you also want those views going to your personal website. This is especially the case if you are selling products through that website.
 
-This has lead to me in the past copy and pasting `.md` files into DEV.to. This works fine, but it's slow and DEV.to has a way of automating this.
+This has led to me in the past copy and pasting `.md` files into DEV.to. This works fine, but it's slow and DEV.to has a way of automating this.
 
-For this tutorial I will use my personal website that uses Nuxt JS as an example.
+For this tutorial, I will use my personal website that uses Nuxt JS as an example.
 
 ## Nuxt JS RSS Feed
 
@@ -21,9 +21,9 @@ First off, we need an RSS feed. The best way of doing this is with the `@nuxtjs/
 yarn add -D @nuxtjs/feed
 ```
 
-For my website I am using the `@nuxtjs/content` module and therefore I need to make some adjustments to how the RSS feed is created. If you are not using that, then [check out the module docs](https://github.com/nuxt-community/feed-module#readme) for more examples.
+For my website, I am using the `@nuxtjs/content` module and therefore I need to make some adjustments to how the RSS feed is created. If you are not using that, then [check out the module docs](https://github.com/nuxt-community/feed-module#readme) for more examples.
 
-The config that was needed is based on the [integrating with @nuxtjs/feeed module](https://content.nuxtjs.org/integrations/).
+The config that was needed is based on the [integrating with @nuxtjs/feed module](https://content.nuxtjs.org/integrations/).
 
 Here is the code used in the `nuxt.config.js` file:
 
@@ -106,8 +106,8 @@ You can then click "Fetch Feed Now" and head on over to your dashboard. If it wo
 
 From here you'll want to edit the posts and adjust the formatting, the main issue comes with code sections. It's worth adding categories as well so you can increase the chance of your blog post being seen.
 
-There's some major benefits to handling posts this way:
+There are some major benefits to handling posts this way:
 
 - Speed of uploading
-- Auto "originaly published on yourwebsite.com" at the top of the DEV.to post
+- Auto "originally published on yourwebsite.com" at the top of the DEV.to post
 - You can use your website URL as the canonical URL

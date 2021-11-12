@@ -5,7 +5,7 @@ published: true
 code: false
 ---
 
-I recently added conic gradients to [Hypercolor](https://hypercolor.dev/). Personally, I have no idea how to use conic gradients, but there's developers and designers out there that can do incredible things with them.
+I recently added conic gradients to [Hypercolor](https://hypercolor.dev/). Personally, I have no idea how to use conic gradients, but there are developers and designers out there that can do incredible things with them.
 
 ## What is a Conic Gradient?
 
@@ -31,4 +31,4 @@ backgroundImage: {
 },
 ```
 
-You can now use conic gradient classes in Tailwind CSS like this `bg-gradient-conic-bl from-fuchsia-300 via-green-400 to-rose-700`. Unsure on what you're doing? Use the [gradient generator on Hypercolor](https://hypercolor.dev/generator) to help get you started.
+You can now use conic gradient classes in Tailwind CSS like this `bg-gradient-conic-bl from-fuchsia-300 via-green-400 to-rose-700`. Unsure of what you're doing? Use the [gradient generator on Hypercolor](https://hypercolor.dev/generator) to help get you started.

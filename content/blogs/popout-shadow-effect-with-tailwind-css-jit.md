@@ -25,7 +25,7 @@ However, thanks to the new Tailwind CSS v2.2 update you can do this without the 
 
 **What's the problem with this?**
 
-1. There's two `<span>` HTML elements being used making the markup cluttered
+1. There are two `<span>` HTML elements being used making the markup cluttered
 2. The offset shadow created isn't accurate (example shown at the end)
 
 ## Popout Shadow Effect with Tailwind CSS (v2.2 Update)
@@ -55,4 +55,4 @@ It's a small addition for cleaner HTML markup.
 
 Take a look at [this example created with SCSS](https://codepen.io/markmead/pen/gOmErLy) in CodePen.
 
-The new Tailwind CSS example and the SCSS example match, however the old Tailwind CSS way does not. Little weird, but could probably fixed by adding `inline-block` to the first `<span>`.
+The new Tailwind CSS example and the SCSS example match, however the old Tailwind CSS way does not. Little weird, but could probably be fixed by adding `inline-block` to the first `<span>`.

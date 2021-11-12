@@ -68,4 +68,6 @@ It also triggers `event.preventDefault()` so the form doesn't submit as we are u
 
 You can do this in a cleaner way with the Alpine JS store:
 
-[Using the Alpine JS Store to Manage Add to Cart](/shopify/alpine-add-to-cart-shopify-api)
+<nuxt-link to="alpine-add-to-cart-shopify-api">
+  Using the Alpine JS to Add to Cart with Shopify API
+</nuxt-link>

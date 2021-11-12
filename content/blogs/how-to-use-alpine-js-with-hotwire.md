@@ -21,6 +21,6 @@ You can easily install this with a RailsBytes that I created:
 
 `rails app:template LOCATION='https://railsbytes.com/script/zPds4M'`
 
-Just copy and pase the above into your terminal and everything you need to make Alpine JS work with Turbo will be installed and setup.
+Just copy and paste the above into your terminal and everything you need to make Alpine JS work with Turbo will be installed and set up.
 
 [AlpineJS with Turbo RailsByte](https://railsbytes.com/templates/zPds4M)

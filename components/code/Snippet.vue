@@ -1,10 +1,15 @@
 <template>
   <div>
-    <p class="px-4 font-mono text-sm font-medium text-white/25">
-      {{ comment }}
-    </p>
+    <p
+      v-text="comment"
+      class="px-4 font-mono text-sm font-medium text-white/25"
+    >
 
-    <div class="mt-4" v-html="html"></div>
+    <div
+      v-html="html"
+      class="mt-4"
+    >
+    </div>
   </div>
 </template>
 

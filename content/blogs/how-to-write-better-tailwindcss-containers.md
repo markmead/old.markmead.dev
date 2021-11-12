@@ -6,15 +6,15 @@ published: true
 
 When it comes to Tailwind CSS containers, a lot of people will write `max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8`
 
-Or something similar. In fact, this website uses the classes above but instead writing that every time, instead I write `container`.
+Or something similar. In fact, this website uses the classes above but instead of writing that every time, instead I write `container`.
 
 As you can see, this is much cleaner and it will keep your HTML uncluttered.
 
-You could argue it's less "declarative" but Bootstrap has been using `container` for years and there's never been any issues. Also, if you're that worried, don't - the explanation to how `container` works in Tailwind CSS can be found in the `tailwind.config.js`.
+You could argue it's less "declarative" but Bootstrap has been using `container` for years and there have never been any issues. Also, if you're that worried, don't - the explanation to how `container` works in Tailwind CSS can be found in the `tailwind.config.js`.
 
 A typical Tailwind CSS config will have the following:
 
-```js[Empty Tailwind CSS config the the theme object]
+```js[Empty Tailwind CSS config the theme object]
 theme: {
   extend: {}
 }

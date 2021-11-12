@@ -1,15 +1,15 @@
 ---
-title: Using the Alpine JS Store to Manage Add to Cart
+title: Using the Alpine JS to Add to Cart with Shopify API
 category: Alpine
 published: true
 code: true
 ---
 
-This uses the v3 version of Alpine JS and makes use of the built in store.
+This uses the v3 version of Alpine JS and makes use of the built-in store.
 
 I highly recommend this approach as the store can be used for other parts of the website.
 
-```js[Setup Alpine JS and create stores to manage cart, variant and quantity]
+```js[Setup Alpine JS and create stores to manage cart, variant, and quantity]
 import Alpine from 'alpinejs'
 
 window.Alpine = Alpine
@@ -59,7 +59,7 @@ So why are we using three stores to manage a simple add to cart?
 
 ### Cart Store
 
-This not only holds the add to cart function, it also holds all the store data in it's `data` variable which can be accessed with `$store.cart.data` in HTML or with `Alpine.store('cart').data` in a JavaScript.
+This not only holds the add to cart function, but it also holds all the store data in its `data` variable which can be accessed with `$store.cart.data` in HTML or with `Alpine.store('cart').data` in a JavaScript.
 
 The function to set the value of this variable is not shown in this example, but here is how it would look:
 
@@ -76,9 +76,9 @@ So when we add to cart we could use `Alpine.store('cart').get()` to update that 
 
 ### Variant Store
 
-This is an important one as it tracks the current selected variant in it's `selected` variable.
+This is an important one as it tracks the currently selected variant in its `selected` variable.
 
-We can then use this variable to show information about the currenty selected variant in the HTML, a common example would be to update the product image.
+We can then use this variable to show information about the currently selected variant in the HTML, a common example would be to update the product image.
 
 You can find out more about managing the current variant with the Alpine JS store on the following post:
 
@@ -86,13 +86,13 @@ You can find out more about managing the current variant with the Alpine JS stor
 
 ### Quantity Store
 
-This one could easily be seens as pointles and in truth, it probably is.
+This one could easily be seen as pointless and in truth, it probably is.
 
-However, it means I'm not having to grab the quantity input value and then pass it through to a function in the store. This might not sound bad, but it can leave to confusion on where these values are coming from.
+However, it means I'm not having to grab the quantity input value and then pass it through to a function in the store. This might not sound bad, but it can cause confusion on where these values are coming from.
 
 Here's a faked product form in Shopify that we will base our work on:
 
-```html[Product form with Apline JS functions and data passed to and from the stores]
+```html[Product form with Alpine JS functions and data passed to and from the stores]
 <form>
   <div>
     <label for="quantity"> Quantity </label>

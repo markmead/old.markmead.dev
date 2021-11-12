@@ -1,9 +1,9 @@
 <template v-if="post.code">
   <div>
     <button
+      @click="$emit('toggle')"
       type="button"
       class="fixed z-50 w-32 text-white bg-black shadow-xl bottom-6 right-6 button"
-      @click="$emit('toggle')"
     >
       {{ show ? 'Hide' : 'Show' }} Code
     </button>
@@ -19,7 +19,7 @@
             :key="title"
             class="p-4 border-2 border-white rounded-lg"
           >
-            <post-code-snippet :title="title" :html="__html" />
+            <code-snippet :title="title" :html="__html" />
           </div>
         </div>
       </div>

@@ -28,13 +28,13 @@ I can confirm that the HAML example took less time to write.
   %a.button.primary(href="/about") Find out more
 ```
 
-If you believe the HTML example is easier to read then that's fine, personally I use HTML instead of HAML for reasons I will explain at the end of this blog post.
+If you believe the HTML example is easier to read then that's fine, personally, I use HTML instead of HAML for reasons I will explain at the end of this blog post.
 
-But HAML is slimmer, faster to write and gives you more time to focus on Ruby on Rails code rather than HTML.
+But HAML is slimmer, faster to write, and gives you more time to focus on Ruby on Rails code rather than HTML.
 
 ## How to Use HAML in Ruby on Rails
 
-It's easy to use HAML in Ruby on Rails, simply change `.html.erb` to `.html.haml` and you're set.
+It's easy to use HAML in Ruby on Rails, simply change `.html.erb` to `.html.haml`, and you're set.
 
 If you need to convert an existing Ruby on Rails application to HAML you can use [haml-rails](https://rubygems.org/gems/haml-rails) to automatically convert your `.html.erb` files to `.html.haml` from the terminal.
 
@@ -131,7 +131,7 @@ It will also set the default view file template to HAML, meaning Ruby on Rails g
 
 ## Why I Don't Use HAML
 
-There's a few reasons why I don't use HAML...
+There are a few reasons why I don't use HAML...
 
 ### Onboarding Developers
 

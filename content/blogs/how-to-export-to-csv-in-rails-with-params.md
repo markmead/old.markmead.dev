@@ -9,9 +9,9 @@ Exporting a CSV in Ruby on Rails is a simple task, but what if you want it to be
 
 This is specific to an application I was working on, but you can easily extract the concepts and code to be used on any other Ruby on Rails application that needs filtered CSV exporting.
 
-The application I was working on had a `users` table and a `subscriptions` table, the subscriptions table manage the users subscription and allowed queries for to check if the users subscription status was `subscribed`, `canceled` and `inactive`. This was all powered by the [pay gem](https://github.com/pay-rails/pay) by Chris Oliver.
+The application I was working on had a `users` table and a `subscriptions` table, the subscriptions table managed the user's subscription and allowed queries to check if the user's subscription status was `subscribed`, `canceled`, and `inactive`. This was all powered by the [pay gem](https://github.com/pay-rails/pay) by Chris Oliver.
 
-The application currently offered filtering of users by the three subscription statuses, but could not export the users with these filters.
+The application currently offered to filter users by the three subscription statuses, but could not export the users with these filters.
 
 So I needed to make a few changes:
 
@@ -90,7 +90,7 @@ def index
 end
 ```
 
-This uses the scopes created in the user model to filter the `@users` instance variable, if there's no params passed it will default to the first `@users` declaration.
+This uses the scopes created in the user model to filter the `@users` instance variable, if there are no params passed it will default to the first `@users` declaration.
 
 There's also a `csv_name` variable that's created to allow for better naming:
 
@@ -98,4 +98,4 @@ There's also a `csv_name` variable that's created to allow for better naming:
 - `canceled-users-2021-01-01.csv`
 - `inactive-users-2021-01-01.csv`
 
-The `csv_name` variable might be better off in the user model, it's personal preference.
+The `csv_name` variable might be better off in the user model, it's a personal preference.

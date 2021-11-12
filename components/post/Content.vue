@@ -1,23 +1,23 @@
 <template>
   <div>
-    <post-code
-      :examples="examples"
-      :show="show"
+    <code-section
+      v-if="post.code"
       @toggle="show = !show"
       @close="show = false"
-      v-if="post.code"
+      :examples="examples"
+      :show="show"
     />
 
     <article>
       <div class="container py-16 space-y-12 sm:py-32">
         <h1
-          class="font-serif text-5xl text-center sm:text-8xl"
           v-text="post.title"
+          class="font-serif text-5xl text-center sm:text-8xl"
         />
 
         <nuxt-content
-          class="max-w-4xl mx-auto font-medium prose prose-lg sm:prose-2xl"
           :document="post"
+          class="max-w-4xl mx-auto font-medium prose prose-lg sm:prose-2xl"
         />
       </div>
     </article>
