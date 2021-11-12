@@ -90,7 +90,7 @@ export default {
   },
   content: {
     markdown: {
-      prism: { theme: false },
+      prism: { theme: 'prism-themes/themes/prism-one-dark.css' },
     },
   },
   googleAnalytics: {

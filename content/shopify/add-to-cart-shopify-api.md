@@ -2,6 +2,7 @@
 title: Add Product to Cart with Shopify API and Fetch
 category: API
 published: true
+code: false
 ---
 
 Here's a code snippet showing how to add to cart via the REST API and Fetch.

@@ -2,6 +2,7 @@
 title: How to Use Apline JS with Hotwire and Turbo
 category: Ruby on Rails
 published: true
+code: false
 ---
 
 There's some new spice in Ruby on Rails... [Hotwire ⚡️](https://hotwire.dev/) which replaces Turbolinks with Turbo.

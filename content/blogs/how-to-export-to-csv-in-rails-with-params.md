@@ -2,6 +2,7 @@
 title: How to Export a Filtered CSV in Ruby on Rails
 category: Ruby on Rails
 published: true
+code: true
 ---
 
 Exporting a CSV in Ruby on Rails is a simple task, but what if you want it to be filtered? For me, this was a speedbump in a recent project. Therefore, to avoid that and maintain full steam ahead I have written up this blog.
@@ -18,7 +19,7 @@ So I needed to make a few changes:
 
 I added the following method to generate the CSV based on parameters passed from the controller:
 
-```ruby
+```ruby[Create method to generate CSV for a model]
 def self.to_csv(records = [])
   attributes = %w[email full_name status]
 
@@ -34,7 +35,7 @@ end
 
 The following scopes were already in use but are vital:
 
-```ruby
+```ruby[Setup scopes to filter records by]
 scope :subscribed, -> { left_outer_joins(:subscriptions).where("subscriptions.status = ?", "active") }
 scope :canceled, -> { left_outer_joins(:subscriptions).where("subscriptions.status = ?", "canceled") }
 scope :inactive, -> { where(processor: nil) }
@@ -44,7 +45,7 @@ You will need to include `require 'csv'` at the top of the file.
 
 If you are using the pay gem then note that the `status` method used in the `attributes` array does not exist, I had to create that:
 
-```ruby
+```ruby[Create a subscription status method to be used with the pay gem]
 def status
   subscription&.status
 end
@@ -54,24 +55,25 @@ end
 
 I added a `link_to` that includes the current params:
 
-```html
+```erb[Create a download CSV link and merge in the current URL params]
 <%= link_to("Download CSV", users_path(request.params.merge(format: :csv))) %>
 ```
 
 There was already a form in place for the filtering:
 
-```html
-<%= form_with(url: users_path, local: true, method: :get)) do |f| %> <%=
-f.select(:status, [['Subscribed', 'subscribed'], ['Canceled', 'canceled'],
-['Inactive', 'inactive']], { selected: params[:status] }) %> <%= f.submit %> <%
-end %>
+```erb[Create a form that sends a get request to filter the records]
+<%= form_with(url: users_path, local: true, method: :get)) do |f| %>
+  <%= f.select(:status, [['Subscribed', 'subscribed'], ['Canceled', 'canceled'], ['Inactive', 'inactive']], { selected: params[:status] }) %>
+
+  <%= f.submit %>
+<% end %>
 ```
 
 ## Controller
 
 I updated the controllers `index` action to include a response for a CSV format request:
 
-```ruby
+```ruby[Filter records based on params passed from the form and include the CSV format as a response]
 def index
   @users = User.order(created_at: :desc)
 

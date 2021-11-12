@@ -2,6 +2,7 @@
 title: Clear Cart with Link to Shopify URL
 category: Theme
 published: true
+code: false
 ---
 
 A quick and easy way you can get a user to clear their cart is to direct them to the url `/cart/clear`.

@@ -2,6 +2,7 @@
 title: Adding Conic Gradients to Tailwind CSS
 category: Tailwind CSS
 published: true
+code: false
 ---
 
 I recently added conic gradients to [Hypercolor](https://hypercolor.dev/). Personally, I have no idea how to use conic gradients, but there's developers and designers out there that can do incredible things with them.

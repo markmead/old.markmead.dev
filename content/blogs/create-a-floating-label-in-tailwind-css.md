@@ -2,6 +2,7 @@
 title: Create a Floating Label in Tailwind CSS
 category: Tailwind CSS
 published: false
+code: true
 ---
 
 Before the Tailwind CSS 2.2 update that enhanced Tailwind CSS JIT there wasn't a Tailwind CSS only solution to creating a floating label, I'd typically reach for Alpine JS and a custom plugin for Tailwind CSS.
@@ -14,7 +15,7 @@ The first piece of the puzzle is to add a new plugin to Tailwind CSS that allows
 
 Thankfully, [this Stack Overflow answer](https://stackoverflow.com/a/65321069) has the solution that we need.
 
-```js
+```js[Adding a focused sibling variant to Tailwind CSS]
 const plugin = require('tailwindcss/plugin')
 
 const focusedSiblingPlugin = plugin(function({ addVariant, e }) {
@@ -37,7 +38,7 @@ module.exports = {
 
 Next, we need a way to check if the `<input>` value is empty or not. For this, we can add another custom plugin.
 
-```js
+```js[Adding a variant for when the input is not empty to Tailwind CSS]
 const notEmptySiblingPlugin = plugin(function({ addVariant }) {
   addVariant('not-empty-sibling', ({ container }) => {
     container.walkRules(rule => {
@@ -51,7 +52,7 @@ const notEmptySiblingPlugin = plugin(function({ addVariant }) {
 
 All this together allows you to write the following HTML to create a floating label.
 
-```html
+```html[Floating label with Tailwind CSS example]
 <div class="relative">
   <input type="text" id="name" placeholder="Name" />
 
@@ -70,7 +71,7 @@ There's another issue as this requires the `<input>` to have a placeholder, even
 
 If you're not a fan of this approach then I'd recommend combining the first plugin `focusedSibling` and JavaScript. I'd advise using Apline JS for this.
 
-```html
+```html[Floating label with Tailwind CSS and Alpine JS example]
 <div class="relative" x-data="{ name: '' }">
   <input type="text" id="name" x-model="name" />
 

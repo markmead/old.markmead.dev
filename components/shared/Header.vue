@@ -1,5 +1,5 @@
 <template>
-  <header class="sticky inset-x-0 top-0 z-50 bg-rose-50">
+  <header class="sticky inset-x-0 top-0 z-10 bg-rose-50">
     <div class="container flex items-center justify-between h-16">
       <nuxt-link
         :to="{ name: 'index' }"
