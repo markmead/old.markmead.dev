@@ -2,6 +2,7 @@
 title: Better Ways to Write Tailwind CSS in CSS
 category: Tailwind CSS
 published: true
+code: false
 ---
 
 There may come a point when you're using Tailwind CSS that you need to write CSS. This is rare, especially since [Tailwind CSS JIT mode](https://tailwindcss.com/docs/just-in-time-mode) came out, allowing you to write Tailwind CSS classes that don't exist, but are created on build.

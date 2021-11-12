@@ -14,7 +14,7 @@ You could argue it's less "declarative" but Bootstrap has been using `container`
 
 A typical Tailwind CSS config will have the following:
 
-```
+```js[Empty Tailwind CSS config the the theme object]
 theme: {
   extend: {}
 }
@@ -24,7 +24,7 @@ Here you can override Tailwind CSS classes or extend them.
 
 To update this to make `container` perform how we want, we will override the class with the following:
 
-```
+```[Extended Tailwind CSS config that sets up the container class]
 theme: {
   container: {
     center: true,

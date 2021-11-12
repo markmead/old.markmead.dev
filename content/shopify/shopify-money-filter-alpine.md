@@ -2,6 +2,7 @@
 title: Shopify Money Filter with an Alpine JS Directive
 category: Alpine
 published: true
+code: false
 ---
 
 ```js

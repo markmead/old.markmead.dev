@@ -2,6 +2,7 @@
 title: Learn HAML in 5 Minutes
 category: Ruby on Rails
 published: true
+code: false
 ---
 
 In short, HAML is a faster way to write HTML and is very common in Ruby on Rails applications.
@@ -14,13 +15,9 @@ I can confirm that the HAML example took less time to write.
 
 ```html
 <section class="banner">
-  <h1 class="banner__title">
-    Hello World!
-  </h1>
+  <h1 class="banner__title">Hello World!</h1>
 
-  <a href="/about" class="button primary">
-    Find out more
-  </a>
+  <a href="/about" class="button primary"> Find out more </a>
 </section>
 ```
 

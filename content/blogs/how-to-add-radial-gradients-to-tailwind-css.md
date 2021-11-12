@@ -2,6 +2,7 @@
 title: Adding Radial Gradients to Tailwind CSS
 category: Tailwind CSS
 published: true
+code: false
 ---
 
 Recently, I added radial gradient classes to [Hypercolor](https://hypercolor.dev/). This is currently not something Tailwind CSS supports and it's unlikely it ever will.

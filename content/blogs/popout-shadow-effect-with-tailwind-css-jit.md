@@ -2,6 +2,7 @@
 title: Popout Shadow with the Tailwind CSS JIT (v2.2)
 category: Tailwind CSS
 published: true
+code: false
 ---
 
 There's a trend of popout shadow effects sweeping the internet, this has always required some extra HTML elements when creating this with Tailwind CSS.

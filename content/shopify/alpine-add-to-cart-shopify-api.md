@@ -2,6 +2,7 @@
 title: Using the Alpine JS Store to Manage Add to Cart
 category: Alpine
 published: true
+code: true
 ---
 
 This uses the v3 version of Alpine JS and makes use of the built in store.

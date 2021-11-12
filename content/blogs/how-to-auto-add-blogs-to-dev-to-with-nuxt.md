@@ -2,6 +2,7 @@
 title: How to Auto Add Your Blogs to DEV.to with Nuxt
 category: Vue
 published: true
+code: true
 ---
 
 I adore DEV.to. It's an amazing platform that lets developers all around the world share knowledge and ideas.
@@ -16,7 +17,7 @@ For this tutorial I will use my personal website that uses Nuxt JS as an example
 
 First off, we need an RSS feed. The best way of doing this is with the `@nuxtjs/feed` module that you can install with:
 
-```shell
+```shell[Install @nuxtjs/feed module to create RSS feed]
 yarn add -D @nuxtjs/feed
 ```
 
@@ -24,11 +25,9 @@ For my website I am using the `@nuxtjs/content` module and therefore I need to m
 
 The config that was needed is based on the [integrating with @nuxtjs/feeed module](https://content.nuxtjs.org/integrations/).
 
-Here is the code used:
+Here is the code used in the `nuxt.config.js` file:
 
-```js
-// top of nuxt.config.js
-
+```js[Get posts and add them to the feed]
 let posts = []
 
 const constructFeedItem = (post, dir, hostname) => {
@@ -53,8 +52,6 @@ const create = async (feed, args) => {
     link: `${hostname}/feed.${ext}`,
   }
 
-  // only get posts that are published
-  // and order by title
   posts = await $content(filePath)
     .where({ published: true })
     .sortBy('title')
@@ -68,28 +65,28 @@ const create = async (feed, args) => {
 
   return feed
 }
+```
 
-// build modules in nuxt.config.js
-// @nuxtjs/feed must come after @nuxtjs/content
+```js[Add @nuxtjs/feed to the build modules]
 buildModules: [
-  ...
   '@nuxt/content',
   '@nuxtjs/feed',
 ]
+```
 
-// feed settings in nuxt.config.js
+```js[Setup the RSS feed and call the create function with the data array]
 feed: [
   {
     path: '/feed.xml',
     create,
     cacheTime: 1000 * 60 * 15,
     type: 'rss2',
-    // these are values passed to the `create` function
     data: ['blogs', 'xml'],
   }
 ]
+```
 
-// hook settings in nuxt.config.js
+```js[Grab the content from @nuxtjs/content and make it readable by the feed]
 hooks: {
   'content:file:beforeInsert': document => {
     if (document.extension === '.md') {

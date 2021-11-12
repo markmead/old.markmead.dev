@@ -2,6 +2,7 @@
 title: Clear Cart with Shopify API and Fetch
 category: API
 published: true
+code: false
 ---
 
 ```js

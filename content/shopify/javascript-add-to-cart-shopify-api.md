@@ -2,6 +2,7 @@
 title: Creating a JavaScript Function to Add to Cart
 category: JavaScript
 published: true
+code: false
 ---
 
 Here we are creating an add to cart function that accepts an `id` and a `quantity` which we will pass on form submit.

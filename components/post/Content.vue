@@ -5,6 +5,7 @@
       :show="show"
       @toggle="show = !show"
       @close="show = false"
+      v-if="post.code"
     />
 
     <article>
@@ -38,6 +39,8 @@ export default {
     }
   },
   mounted() {
+    if (!this.post.code) return
+
     let elements = document.querySelectorAll('.nuxt-content-highlight')
 
     elements.forEach(element => {
