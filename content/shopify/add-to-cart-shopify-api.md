@@ -2,11 +2,12 @@
 title: Add Product to Cart with Shopify API and Fetch
 category: API
 published: true
+code: true
 ---
 
 Here's a code snippet showing how to add to cart via the REST API and Fetch.
 
-```js
+```js[Add to cart with Shopify API and Fetch]
 let cartData = { id: variantId, quantity: 1 }
 
 fetch('/cart/add.js', {
