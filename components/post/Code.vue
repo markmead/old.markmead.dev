@@ -19,13 +19,7 @@
             :key="title"
             class="p-4 border-2 border-white rounded-lg"
           >
-            <div class="px-4">
-              <p class="font-mono text-sm font-medium text-white/25">
-                // {{ title }}
-              </p>
-            </div>
-
-            <div class="mt-4" v-html="__html"></div>
+            <post-code-snippet :title="title" :html="__html" />
           </div>
         </div>
       </div>
