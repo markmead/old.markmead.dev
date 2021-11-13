@@ -1,10 +1,8 @@
 <template>
   <page-content title="Hello, I'm Mark Mead.">
     <p>
-      I’ve been a developer for roughly 5 years. Currently, I am currently the
-      Senior Developer at
-      <index-external-link url="https://www.wearefuze.co.uk/" text="FUZE" />, a
-      creative marketing agency helping brands go further.
+      I’ve been a developer for roughly 5 years and I am currently a Full Stack Developer at
+      <index-external-link url="https://www.wiro.agency/" text="Wiro Agency" />, a Shopify Plus agency.
     </p>
 
     <p>
