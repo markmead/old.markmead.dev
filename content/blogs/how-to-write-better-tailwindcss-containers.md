@@ -2,6 +2,7 @@
 title: How to Write Better Tailwind CSS Containers
 category: Tailwind CSS
 published: true
+code: false
 ---
 
 When it comes to Tailwind CSS containers, a lot of people will write `max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8`
@@ -14,9 +15,10 @@ You could argue it's less "declarative" but Bootstrap has been using `container`
 
 A typical Tailwind CSS config will have the following:
 
-```js[Empty Tailwind CSS config the theme object]
+```js
 theme: {
-  extend: {}
+  extend: {
+  }
 }
 ```
 
@@ -24,7 +26,7 @@ Here you can override Tailwind CSS classes or extend them.
 
 To update this to make `container` perform how we want, we will override the class with the following:
 
-```[Extended Tailwind CSS config that sets up the container class]
+```js
 theme: {
   container: {
     center: true,

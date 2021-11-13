@@ -9,7 +9,7 @@ This uses the v3 version of Alpine JS and makes use of the built-in store.
 
 I highly recommend this approach as the store can be used for other parts of the website.
 
-```js[Setup Alpine JS and create stores to manage cart, variant, and quantity]
+```js[Setup Alpine JS and create stores to manage cart, variant, and quantity (assets/theme.js)]
 import Alpine from 'alpinejs'
 
 window.Alpine = Alpine
@@ -63,7 +63,7 @@ This not only holds the add to cart function, but it also holds all the store da
 
 The function to set the value of this variable is not shown in this example, but here is how it would look:
 
-```js[Get the current cart data and saves it to a variable]
+```js[Get the current cart data and saves it to a variable (assets/theme.js)]
 get() {
   fetch('/cart.js')
     .then((response) => response.json())
@@ -92,7 +92,7 @@ However, it means I'm not having to grab the quantity input value and then pass 
 
 Here's a faked product form in Shopify that we will base our work on:
 
-```html[Product form with Alpine JS functions and data passed to and from the stores]
+```html[Product form with Alpine JS functions and data passed to and from the stores (sections/product-form.liquid)]
 <form>
   <div>
     <label for="quantity"> Quantity </label>

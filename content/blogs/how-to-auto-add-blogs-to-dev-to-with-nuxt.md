@@ -27,7 +27,7 @@ The config that was needed is based on the [integrating with @nuxtjs/feed module
 
 Here is the code used in the `nuxt.config.js` file:
 
-```js[Get posts and add them to the feed]
+```js[Get posts and add them to the feed (nuxt.config.js)]
 let posts = []
 
 const constructFeedItem = (post, dir, hostname) => {
@@ -67,14 +67,14 @@ const create = async (feed, args) => {
 }
 ```
 
-```js[Add @nuxtjs/feed to the build modules]
+```js[Add @nuxtjs/feed to the build modules (nuxt.config.js)]
 buildModules: [
   '@nuxt/content',
   '@nuxtjs/feed',
 ]
 ```
 
-```js[Setup the RSS feed and call the create function with the data array]
+```js[Setup the RSS feed and call the create function with the data array (nuxt.config.js)]
 feed: [
   {
     path: '/feed.xml',
@@ -86,7 +86,7 @@ feed: [
 ]
 ```
 
-```js[Grab the content from @nuxtjs/content and make it readable by the feed]
+```js[Grab the content from @nuxtjs/content and make it readable by the feed (nuxt.config.js)]
 hooks: {
   'content:file:beforeInsert': document => {
     if (document.extension === '.md') {

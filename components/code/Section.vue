@@ -5,7 +5,7 @@
       type="button"
       class="fixed z-50 w-32 text-white bg-black shadow-xl bottom-6 right-6 button"
     >
-      {{ show ? 'Hide' : 'Show' }} Code
+      {{ show ? 'Show Notes' : 'Show Code' }}
     </button>
 
     <div

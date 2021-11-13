@@ -15,7 +15,7 @@ The first piece of the puzzle is to add a new plugin to Tailwind CSS that allows
 
 Thankfully, [this Stack Overflow answer](https://stackoverflow.com/a/65321069) has the solution that we need.
 
-```js[Adding a focused sibling variant to Tailwind CSS]
+```js[Adding a focused sibling variant to Tailwind CSS (tailwind.config.js)]
 const plugin = require('tailwindcss/plugin')
 
 const focusedSiblingPlugin = plugin(function({ addVariant, e }) {
@@ -38,7 +38,7 @@ module.exports = {
 
 Next, we need a way to check if the `<input>` value is empty or not. For this, we can add another custom plugin.
 
-```js[Adding a variant for when the input is not empty to Tailwind CSS]
+```js[Adding a variant for when the input is not empty to Tailwind CSS (tailwind.config.js)]
 const notEmptySiblingPlugin = plugin(function({ addVariant }) {
   addVariant('not-empty-sibling', ({ container }) => {
     container.walkRules(rule => {

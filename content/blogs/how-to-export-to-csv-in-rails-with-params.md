@@ -19,7 +19,7 @@ So I needed to make a few changes:
 
 I added the following method to generate the CSV based on parameters passed from the controller:
 
-```ruby[Create method to generate CSV for a model]
+```ruby[Create method to generate CSV for a model (models/user.rb)]
 def self.to_csv(records = [])
   attributes = %w[email full_name status]
 
@@ -35,7 +35,7 @@ end
 
 The following scopes were already in use but are vital:
 
-```ruby[Setup scopes to filter records by]
+```ruby[Setup scopes to filter records by (models/user.rb)]
 scope :subscribed, -> { left_outer_joins(:subscriptions).where("subscriptions.status = ?", "active") }
 scope :canceled, -> { left_outer_joins(:subscriptions).where("subscriptions.status = ?", "canceled") }
 scope :inactive, -> { where(processor: nil) }
@@ -45,7 +45,7 @@ You will need to include `require 'csv'` at the top of the file.
 
 If you are using the pay gem then note that the `status` method used in the `attributes` array does not exist, I had to create that:
 
-```ruby[Create a subscription status method to be used with the pay gem]
+```ruby[Create a subscription status method to be used with the pay gem (models/user.rb)]
 def status
   subscription&.status
 end
@@ -55,13 +55,13 @@ end
 
 I added a `link_to` that includes the current params:
 
-```erb[Create a download CSV link and merge in the current URL params]
+```erb[Create a download CSV link and merge in the current URL params (users/index.html.erb)]
 <%= link_to("Download CSV", users_path(request.params.merge(format: :csv))) %>
 ```
 
 There was already a form in place for the filtering:
 
-```erb[Create a form that sends a get request to filter the records]
+```erb[Create a form that sends a get request to filter the records (users/index.html.erb)]
 <%= form_with(url: users_path, local: true, method: :get)) do |f| %>
   <%= f.select(:status, [['Subscribed', 'subscribed'], ['Canceled', 'canceled'], ['Inactive', 'inactive']], { selected: params[:status] }) %>
 
@@ -73,7 +73,7 @@ There was already a form in place for the filtering:
 
 I updated the controllers `index` action to include a response for a CSV format request:
 
-```ruby[Filter records based on params passed from the form and include the CSV format as a response]
+```ruby[Filter records based on params passed from the form and include the CSV format as a response (controllers/users_controller.rb)]
 def index
   @users = User.order(created_at: :desc)
 

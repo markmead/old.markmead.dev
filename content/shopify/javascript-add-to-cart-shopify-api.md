@@ -2,12 +2,12 @@
 title: Creating a JavaScript Function to Add to Cart
 category: JavaScript
 published: true
-code: false
+code: true
 ---
 
 Here we are creating an add to cart function that accepts an `id` and a `quantity` which we will pass on form submit.
 
-```js
+```js[Function that adds to cart with Shopify API and Fetch (assets/product.js)]
 function addToCart(variantId, quantity = 1) {
   let cartData = { id: variantId, quantity: quantity }
 
@@ -26,7 +26,7 @@ function addToCart(variantId, quantity = 1) {
 
 Here's a faked product form in Shopify that we will base our work on:
 
-```html
+```html[Product form (sections/product-form.liquid)]
 <form>
   <div>
     <label for="quantity"> Quantity </label>
@@ -48,7 +48,7 @@ You can then write the following JavaScript to grab the data needed and then pas
 
 It's possible and probably better to listen to the form submit, but this seems to be the more common approach.
 
-```js
+```js[Get elements and data from the form and call addToCart function with data (assets/product.js)]
 let quantityInput = document.getElementyById('quantity')
 let submitButton = document.getElementById('submit')
 

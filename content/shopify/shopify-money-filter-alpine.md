@@ -2,7 +2,7 @@
 title: Shopify Money Filter with an Alpine JS Directive
 category: Alpine
 published: true
-code: false
+code: true
 ---
 
 If you're working with the Shopify API and Alpine JS then there might be times you write some HTML like this:
@@ -15,7 +15,7 @@ This is getting the `variant` store from Alpine JS and returning the `price` of 
 
 For reference, the store might look something like this:
 
-```js
+```js[Setup Alpine JS store to control current variant (assets/theme.js)]
 Alpine.store('variant', {
   selected: null,
 })
@@ -25,7 +25,7 @@ When using the Alpine JS directive `x-text` you can no longer use the Liquid fil
 
 We can replicate this in Alpine JS with a custom directive:
 
-```js
+```js[Create an Alpine JS directive to convert price into currency based on Shopify data (assets/theme.js)]
 Alpine.directive('money', (el, { expression }, { evaluateLater, effect }) => {
   let getValue = evaluateLater(expression)
 
