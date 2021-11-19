@@ -8,12 +8,39 @@
         Mark Mead
       </nuxt-link>
 
-      <nav role="navigation" class="flex space-x-4 font-medium sm:space-x-8">
-        <nuxt-link :to="{ name: 'projects' }">Projects</nuxt-link>
-        <nuxt-link :to="{ name: 'blogs' }">Blogs</nuxt-link>
-        <nuxt-link :to="{ name: 'shopify' }">Shopify</nuxt-link>
-        <nuxt-link :to="{ name: 'snippets' }">Snippets</nuxt-link>
-      </nav>
+      <shared-navigation class="hidden sm:block" />
+
+      <div class="relative sm:hidden">
+        <button
+          type="button"
+          @click="open = !open"
+          class="font-medium"
+        >
+          Menu
+        </button>
+
+        <div
+          class="absolute right-0 max-w-xs p-8 mt-4 shadow-xl bg-red-50 top-full rounded-xl"
+          v-if="open"
+        >
+          <shared-navigation />
+        </div>
+      </div>
     </div>
   </header>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      open: false
+    }
+  },
+  watch: {
+    $route () {
+      this.open = false
+    }
+  }
+}
+</script>

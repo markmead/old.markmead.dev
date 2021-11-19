@@ -1,18 +1,9 @@
 <template>
   <div class="py-16 sm:py-32">
-    <section>
-      <div class="container">
-        <h1 class="font-serif text-5xl sm:text-8xl">
-          Code Snippets
-        </h1>
-
-        <p
-          class="mt-12 text-2xl font-medium leading-tight sm:text-5xl sm:leading-tight"
-        >
-          These are quick reference points of code snippets that I have written or used in development projects.
-        </p>
-      </div>
-    </section>
+    <page-banner
+      title="Code Snippets"
+      text="These are quick reference points of code snippets that I have written or used in development projects."
+    />
 
     <section>
       <div class="container mt-12">
