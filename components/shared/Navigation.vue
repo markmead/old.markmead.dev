@@ -1,11 +1,30 @@
 <template>
   <nav
     role="navigation"
-    class="flex flex-col space-y-4 font-medium text-center sm:space-x-8 sm:flex-row sm:space-y-0"
+    class="flex flex-col items-center space-y-4 text-center sm:flex-row sm:space-x-4 sm:space-y-0"
   >
-    <nuxt-link :to="{ name: 'projects' }">Projects</nuxt-link>
-    <nuxt-link :to="{ name: 'blogs' }">Blogs</nuxt-link>
-    <nuxt-link :to="{ name: 'shopify' }">Shopify</nuxt-link>
-    <nuxt-link :to="{ name: 'snippets' }">Snippets</nuxt-link>
+    <shared-navigation-link
+      text="Projects"
+      emoji="🥝"
+      url="projects"
+    />
+
+    <shared-navigation-link
+      text="Blogs"
+      emoji="✏️"
+      url="blogs"
+    />
+
+    <shared-navigation-link
+      text="Shopify"
+      emoji="🛍️"
+      url="shopify"
+    />
+
+    <shared-navigation-link
+      text="Snippets"
+      emoji="🤏"
+      url="snippets"
+    />
   </nav>
 </template>

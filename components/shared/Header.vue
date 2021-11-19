@@ -1,6 +1,6 @@
 <template>
   <header class="sticky inset-x-0 top-0 z-10 bg-rose-50">
-    <div class="container flex items-center justify-between h-16">
+    <div class="container flex items-center justify-between h-20">
       <nuxt-link
         :to="{ name: 'index' }"
         class="text-xl font-bold tracking-tighter"
@@ -14,13 +14,19 @@
         <button
           type="button"
           @click="open = !open"
-          class="font-medium"
+          class="inline-flex items-center px-3 py-1.5 rounded-lg bg-red-100 text-sm hover:bg-red-100/50 transition"
         >
-          Menu
+          <span role="img">
+            🍔
+          </span>
+
+          <span class="ml-1.5 font-medium">
+            Menu
+          </span>
         </button>
 
         <div
-          class="absolute right-0 max-w-xs p-8 mt-4 shadow-xl bg-red-50 top-full rounded-xl"
+          class="absolute right-0 p-4 mt-4 shadow-xl bg-red-50 top-full rounded-xl"
           v-if="open"
         >
           <shared-navigation />
