@@ -1,13 +1,13 @@
 <template>
   <div class="py-16 sm:py-32">
     <page-banner
-      title="Shopify Guides"
-      text="Here are some short, to the point Shopify guides that can be used as learning and reference resource."
+      title="Code Snippets"
+      text="These are quick reference points of code snippets that I have written or used in development projects."
     />
 
     <section>
       <div class="container mt-12">
-        <post-grid :posts="posts" type="shopify-slug" />
+        <post-grid :posts="posts" type="snippets-slug" />
       </div>
     </section>
   </div>
@@ -16,7 +16,7 @@
 <script>
 export default {
   async asyncData({ $content }) {
-    const posts = await $content('shopify')
+    const posts = await $content('snippets')
       .where({ published: true })
       .sortBy('title')
       .fetch()
@@ -25,12 +25,12 @@ export default {
   },
   head() {
     return {
-      title: 'Shopify Guides',
+      title: 'Development Blog',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'Short, informative guides for Shopify developers',
+          content: 'Short, informative blog posts for developers.',
         },
       ],
     }

@@ -9,16 +9,18 @@
     />
 
     <article>
-      <div class="container py-16 space-y-12 sm:py-32">
-        <h1
-          v-text="post.title"
-          class="font-serif text-5xl text-center sm:text-8xl"
-        />
+      <div class="container py-16 sm:py-32">
+        <div class="mx-auto space-y-12 max-w-[80ch]">
+          <h1
+            v-text="post.title"
+            class="font-serif text-5xl text-center sm:text-7xl"
+          />
 
-        <nuxt-content
-          :document="post"
-          class="max-w-4xl mx-auto font-medium prose prose-lg sm:prose-2xl"
-        />
+          <nuxt-content
+            :document="post"
+            class="font-medium prose prose-lg sm:prose-2xl"
+          />
+        </div>
       </div>
     </article>
   </div>
