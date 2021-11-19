@@ -12,6 +12,7 @@
         <nuxt-link :to="{ name: 'projects' }">Projects</nuxt-link>
         <nuxt-link :to="{ name: 'blogs' }">Blogs</nuxt-link>
         <nuxt-link :to="{ name: 'shopify' }">Shopify</nuxt-link>
+        <nuxt-link :to="{ name: 'snippets' }">Snippets</nuxt-link>
       </nav>
     </div>
   </header>
