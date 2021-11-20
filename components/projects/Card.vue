@@ -1,15 +1,26 @@
 <template>
-  <nuxt-link
-    :to="{ name: 'projects-slug', params: { slug: slug } }"
+  <a
+    :href="url"
+    target="_blank"
+    rel="noreferrer"
     class="h-[300px] sm:h-[500px] rounded-lg p-8 flex items-center justify-center hover:shadow-xl transition"
-    :class="branding"
+    :class="css"
   >
     <div class="mx-auto text-center">
-      <h2 class="font-serif text-3xl sm:text-5xl" v-text="title" />
+      <ul class="flex justify-center space-x-2">
+        <shared-tag
+          v-for="tag of tags"
+          :key="tag"
+          :category="tag"
+          class="bg-white"
+        />
+      </ul>
 
-      <p class="max-w-sm mt-4 text-lg font-medium" v-text="description" />
+      <h2 class="mt-8 font-serif text-3xl sm:text-5xl" v-text="title" />
+
+      <p class="mt-4 text-lg font-medium" v-text="subtitle" />
     </div>
-  </nuxt-link>
+  </a>
 </template>
 
 <script>
@@ -19,15 +30,19 @@ export default {
       type: String,
       required: true,
     },
-    description: {
+    subtitle: {
       type: String,
       required: true,
     },
-    branding: {
+    url: {
       type: String,
       required: true,
     },
-    slug: {
+    tags: {
+      type: Array,
+      required: true,
+    },
+    css: {
       type: String,
       required: true,
     },

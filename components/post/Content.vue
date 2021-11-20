@@ -9,7 +9,7 @@
     />
 
     <article>
-      <div class="container py-16 sm:py-32">
+      <div class="max-w-screen-xl px-4 py-16 mx-auto sm:py-32">
         <div class="mx-auto space-y-12 max-w-[80ch]">
           <h1
             v-text="post.title"

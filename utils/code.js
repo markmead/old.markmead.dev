@@ -9,7 +9,7 @@ export const code = {
   },
   Alpine: {
     color: 'bg-teal-500',
-    emoji: '🐳',
+    emoji: '🏔️',
   },
   API: {
     color: 'bg-blue-500',

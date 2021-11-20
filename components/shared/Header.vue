@@ -1,6 +1,6 @@
 <template>
   <header class="sticky inset-x-0 top-0 z-10 bg-rose-50">
-    <div class="container flex items-center justify-between h-20">
+    <div class="flex items-center justify-between h-20 max-w-screen-xl px-4 mx-auto">
       <nuxt-link
         :to="{ name: 'index' }"
         class="text-xl font-bold tracking-tighter"

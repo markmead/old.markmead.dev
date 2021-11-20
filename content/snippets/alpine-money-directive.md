@@ -5,7 +5,7 @@ published: true
 code: false
 ---
 
-```
+```js
 Alpine.directive('money', (el, { expression }, { evaluateLater, effect }) => {
   let getValue = evaluateLater(expression)
 

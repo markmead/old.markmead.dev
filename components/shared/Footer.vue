@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div
-      class="container flex items-center justify-center h-24 space-x-8 border-t border-black/5"
+      class="flex items-center justify-center h-24 max-w-screen-xl px-4 mx-auto space-x-8 border-t border-black/5"
     >
       <shared-social-link
         v-for="social of socials"
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { socials } from '~/assets/data/footer'
+import { socials } from '@/lib/footer'
 
 export default {
   computed: {

@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="container">
+    <div class="max-w-screen-xl px-4 mx-auto">
       <h1 class="font-serif text-5xl sm:text-7xl" v-text="title" />
 
       <p

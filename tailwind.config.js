@@ -4,24 +4,14 @@ const colors = require('tailwindcss/colors')
 module.exports = {
   mode: 'jit',
   purge: [
-    'components/**/*.{vue,js}',
-    'layouts/**/*.vue',
+    'pages/*.vue',
     'pages/**/*.vue',
-    'plugins/**/*.{js,ts}',
-    'nuxt.config.{js,ts}',
-    'content/**/*.md',
+    'components/**/*.vue',
+    'lib/*.js',
     'utils/*.js',
   ],
-  darkMode: true,
+  darkMode: false,
   theme: {
-    container: {
-      center: true,
-      padding: {
-        DEFAULT: '1rem',
-        sm: '1.5rem',
-        lg: '2rem',
-      },
-    },
     extend: {
       fontFamily: {
         sans: ['DM Sans', ...defaultTheme.fontFamily.sans],

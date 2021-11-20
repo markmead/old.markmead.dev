@@ -2,7 +2,7 @@
   <div class="py-16 sm:py-32">
     <page-banner
       title="Featured Projects"
-      text="I have built, deployed and maintained over 150 websites. Here's the few that I'm featuring."
+      text="I have built, deployed and maintained over 150 websites. Here's a few that I'm featuring."
     />
 
     <section>
@@ -14,11 +14,13 @@
 </template>
 
 <script>
-export default {
-  async asyncData({ $content }) {
-    const projects = await $content('projects').fetch()
+import { projects } from '@/lib/projects'
 
-    return { projects }
+export default {
+  computed: {
+    projects() {
+      return projects
+    }
   },
   head() {
     return {
