@@ -17,7 +17,7 @@ export const code = {
   },
   JavaScript: {
     color: 'bg-yellow-500',
-    emoji: '🐛',
+    emoji: '🦩',
   },
   React: {
     color: 'bg-blue-500',

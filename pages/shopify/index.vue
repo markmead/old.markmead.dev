@@ -6,7 +6,7 @@
     />
 
     <section>
-      <div class="container mt-12">
+      <div class="max-w-screen-xl px-4 mx-auto mt-12">
         <post-grid :posts="posts" type="shopify-slug" />
       </div>
     </section>
