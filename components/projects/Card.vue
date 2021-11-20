@@ -7,12 +7,12 @@
     :class="css"
   >
     <div class="mx-auto text-center">
-      <ul class="flex justify-center space-x-2">
+      <ul class="flex flex-wrap">
         <shared-tag
           v-for="tag of tags"
           :key="tag"
           :category="tag"
-          class="bg-white"
+          class="m-2 bg-white"
         />
       </ul>
 
