@@ -6,14 +6,12 @@ code: false
 ---
 
 ```js
-function getCart() {
+function async getCart() {
   let { response } = await fetch('/cart.js')
   let { data } = response
 }
-```
 
-```js
-function addToCart() {
+function async addToCart() {
   let cartData = { id: variant.id, quantity: 1 }
 
   let { response } = await fetch('/cart/add.js', {
@@ -24,10 +22,8 @@ function addToCart() {
 
   response.ok && getCart()
 }
-```
 
-```js
-function removeFromCart() {
+function async removeFromCart() {
   let cartData = { line: index, quantity: 0 }
 
   let { response } = await fetch('/cart/change.js', {
