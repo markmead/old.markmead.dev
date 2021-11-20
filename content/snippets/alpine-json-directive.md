@@ -17,5 +17,5 @@ Alpine.directive('json', (el, { expression }, { evaluateLater, effect }) => {
 ```
 
 ```html
-<p x-money="price"></p>
+<p x-json="variant"></p>
 ```

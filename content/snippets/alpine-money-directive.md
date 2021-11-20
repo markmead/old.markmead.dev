@@ -24,8 +24,10 @@ Alpine.directive('money', (el, { expression }, { evaluateLater, effect }) => {
 ```
 
 ```html
-<p x-money="$store.variant.selected.price"></p>
+<p x-money="price"></p>
 ```
+
+Here's a blog post that dives into this deeper.
 
 <nuxt-link to="/shopify/shopify-money-filter-alpine">
   Shopify Money Filter with an Alpine JS Directive
