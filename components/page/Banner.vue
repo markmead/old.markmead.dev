@@ -4,10 +4,9 @@
       <h1 class="font-serif text-5xl sm:text-7xl" v-text="title" />
 
       <p
-        class="mt-12 text-2xl font-medium leading-tight sm:text-5xl sm:leading-tight"
+        class="max-w-5xl mt-12 text-2xl font-medium sm:text-4xl"
         v-text="text"
-      >
-      </p>
+      />
     </div>
   </section>
 </template>

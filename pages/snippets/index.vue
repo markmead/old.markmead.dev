@@ -1,14 +1,12 @@
 <template>
-  <div class="py-16 sm:py-32">
+  <div class="max-w-screen-xl px-4 py-16 mx-auto lg:py-32">
     <page-banner
       title="Code Snippets"
       text="These are quick reference points of code snippets that I have written or used in development projects."
     />
 
-    <section>
-      <div class="max-w-screen-xl px-4 mx-auto mt-12">
-        <post-grid :posts="posts" type="snippets-slug" />
-      </div>
+    <section class="mt-12">
+      <post-grid :posts="posts" type="snippets-slug" />
     </section>
   </div>
 </template>

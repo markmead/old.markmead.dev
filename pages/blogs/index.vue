@@ -1,14 +1,12 @@
 <template>
-  <div class="py-16 sm:py-32">
+  <div class="max-w-screen-xl px-4 py-16 mx-auto lg:py-32">
     <page-banner
       title="Development Blogs"
       text="Here are some short, to the point development blog posts as a learning and discovery resource."
     />
 
-    <section>
-      <div class="max-w-screen-xl px-4 mx-auto mt-12">
-        <post-grid :posts="posts" type="blogs-slug" />
-      </div>
+    <section class="mt-12">
+      <post-grid :posts="posts" type="blogs-slug" />
     </section>
   </div>
 </template>

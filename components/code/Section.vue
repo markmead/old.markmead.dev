@@ -1,23 +1,20 @@
 <template v-if="post.code">
   <div>
-    <button
-      @click="$emit('toggle')"
-      type="button"
-      class="fixed z-50 w-32 text-white bg-black shadow-xl bottom-6 right-6 button"
-    >
-      {{ show ? 'Show Notes' : 'Show Code' }}
-    </button>
+    <code-button
+      @toggle="$emit('toggle')"
+      :show="show"
+    />
 
     <div
       v-show="show"
       class="fixed inset-0 z-40 overflow-y-scroll bg-[#282c34]"
     >
-      <div class="flex items-center justify-center p-8">
-        <div class="w-screen max-w-3xl space-y-8">
+      <div class="flex items-center justify-center">
+        <div class="w-screen max-w-3xl p-4 space-y-8">
           <div
             v-for="{ title, __html } of examples"
             :key="title"
-            class="p-4 border-2 border-white rounded-lg"
+            class="p-4 border-2 rounded-lg border-white/10"
           >
             <code-snippet :title="title" :html="__html" />
           </div>
@@ -36,14 +33,8 @@ export default {
     },
     show: {
       type: Boolean,
-      defalt: false
+      default: false
     }
   }
 }
 </script>
-
-<style lang="postcss" scoped>
-.button {
-  @apply text-sm font-medium py-3 px-4 rounded-lg;
-}
-</style>

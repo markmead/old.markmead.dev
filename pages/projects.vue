@@ -1,5 +1,5 @@
 <template>
-  <div class="py-16 sm:py-32">
+  <div class="py-16 lg:py-32">
     <page-banner
       title="Featured Projects"
       text="I have built, deployed and maintained over 150 websites. Here's a few that I'm featuring."

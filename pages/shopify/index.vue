@@ -1,14 +1,12 @@
 <template>
-  <div class="py-16 sm:py-32">
+  <div class="max-w-screen-xl px-4 py-16 mx-auto lg:py-32">
     <page-banner
       title="Shopify Guides"
       text="Here are some short, to the point Shopify guides that can be used as learning and reference resource."
     />
 
-    <section>
-      <div class="max-w-screen-xl px-4 mx-auto mt-12">
-        <post-grid :posts="posts" type="shopify-slug" />
-      </div>
+    <section class="mt-12">
+      <post-grid :posts="posts" type="shopify-slug" />
     </section>
   </div>
 </template>

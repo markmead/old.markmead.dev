@@ -1,28 +1,29 @@
 <template>
-  <div>
+  <div class="max-w-screen-xl px-4 py-16 mx-auto lg:py-32">
     <code-section
       v-if="post.code"
-      @toggle="show = !show"
-      @close="show = false"
       :examples="examples"
       :show="show"
+      @toggle="show = !show"
+      @close="show = false"
     />
 
-    <article>
-      <div class="max-w-screen-xl px-4 py-16 mx-auto sm:py-32">
-        <div class="mx-auto space-y-12 max-w-[80ch]">
-          <h1
-            v-text="post.title"
-            class="font-serif text-5xl text-center sm:text-7xl"
-          />
-
-          <nuxt-content
-            :document="post"
-            class="font-medium prose prose-lg sm:prose-2xl"
-          />
-        </div>
+    <div class="grid grid-cols-1 gap-y-8 gap-x-16 lg:grid-cols-3 lg:items-start">
+      <div class="lg:col-span-2">
+        <shared-article :title="post.title" :content="post" />
       </div>
-    </article>
+
+      <aside class="grid grid-cols-1 gap-8 lg:sticky sm:grid-cols-2 lg:grid-cols-1 lg:top-32">
+        <post-card
+          v-for="{ title, category, slug } of related"
+          :title="title"
+          :category="category"
+          :slug="slug"
+          :key="slug"
+          :type="type"
+        />
+      </aside>
+    </div>
   </div>
 </template>
 
@@ -33,6 +34,14 @@ export default {
       type: Object,
       required: true,
     },
+    related: {
+      type: Array,
+      required: true,
+    },
+    type: {
+      type: String,
+      required: true,
+    }
   },
   data() {
     return {

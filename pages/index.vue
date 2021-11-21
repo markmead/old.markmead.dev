@@ -1,46 +1,16 @@
 <template>
-  <page-content title="Hello, I'm Mark Mead.">
-    <p>
-      I’ve been a developer for roughly 5 years and I am currently a Full Stack Developer at
-      <index-external-link url="https://www.wiro.agency/" text="Wiro Agency" />, a Shopify Plus agency.
-    </p>
-
-    <p>
-      I have a selection of
-      <index-internal-link name="projects" text="featured projects" /> and
-      <index-internal-link name="blogs" text="development blogs" /> where I talk
-      about the current stack that I’m using.
-    </p>
-
-    <p>
-      My current stack is Ruby on Rails, Shopify, Vue (Nuxt), Tailwind CSS,
-      Stimulus JS, Alpine JS and on occasions RSpec. However, that’s just the
-      tip of the iceberg, I’ve written about
-      <index-internal-link name="stack" text="my full tech stack" /> on this
-      website.
-    </p>
-
-    <p>
-      I work on two open source projects
-      <index-external-link url="https://www.hyperui.dev/" text="HyperUI" /> a
-      component library for Tailwind CSS and
-      <index-external-link url="https://hypercolor.dev/" text="Hypercolor" />
-      a gradient library for Tailwind CSS.
-    </p>
-
-    <p>
-      You can follow me on
-      <index-external-link
-        url="https://twitter.com/itsmarkmead"
-        text="Twitter"
-      />
-      where I post about development and announce new features and blogs.
-    </p>
-  </page-content>
+  <div class="max-w-screen-xl px-4 py-16 mx-auto lg:py-32">
+    <shared-article :title="page.title" :content="page" />
+  </div>
 </template>
 
 <script>
 export default {
+  async asyncData({ $content }) {
+    const page = await $content('pages', 'index').fetch()
+
+    return { page }
+  },
   head() {
     return {
       title: 'Shopify Developer in the UK',

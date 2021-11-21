@@ -1,12 +1,11 @@
 <template>
   <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
     <post-card
-      v-for="post of posts"
-      :title="post.title"
-      :category="post.category"
-      :slug="post.slug"
-      :key="post.id"
-      :code="post.code"
+      v-for="{ title, category, slug } of posts"
+      :title="title"
+      :category="category"
+      :slug="slug"
+      :key="slug"
       :type="type"
     />
   </div>
