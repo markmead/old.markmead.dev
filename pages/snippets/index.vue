@@ -23,12 +23,12 @@ export default {
   },
   head() {
     return {
-      title: 'Development Blog',
+      title: 'Code Snippets',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'Short, informative blog posts for developers.',
+          content: 'Code snippets for quick reference in development.',
         },
       ],
     }
