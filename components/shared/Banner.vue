@@ -1,7 +1,7 @@
 <template>
   <aside class="p-3 text-center bg-black">
     <p class="text-sm font-medium text-white">
-      <a href="https://new.markmead.dev/" class="inline-flex items-center underline">
+      <a href="https://markmead.dev/" class="inline-flex items-center underline">
         New Simplified Website
 
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 ml-1.5 flex-shrink-0">

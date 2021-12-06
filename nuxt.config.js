@@ -4,43 +4,43 @@ let siteData = {
   description: 'Shopify and Ruby on Rails developer in the United Kingdom.',
 }
 
-let posts = []
+// let posts = []
 
-const constructFeedItem = (post, dir, hostname) => {
-  const url = `${hostname}/${dir}/${post.slug}`
+// const constructFeedItem = (post, dir, hostname) => {
+//   const url = `${hostname}/${dir}/${post.slug}`
 
-  return {
-    title: post.title,
-    id: url,
-    link: url,
-    content: post.bodyPlainText,
-  }
-}
+//   return {
+//     title: post.title,
+//     id: url,
+//     link: url,
+//     content: post.bodyPlainText,
+//   }
+// }
 
-const create = async (feed, args) => {
-  const { $content } = require('@nuxt/content')
-  const [filePath, ext] = args
-  const hostname = siteData.url
+// const create = async (feed, args) => {
+//   const { $content } = require('@nuxt/content')
+//   const [filePath, ext] = args
+//   const hostname = siteData.url
 
-  feed.options = {
-    title: 'Development Blogs',
-    description: 'Short and to the point development blogs.',
-    link: `${hostname}/feed.${ext}`,
-  }
+//   feed.options = {
+//     title: 'Development Blogs',
+//     description: 'Short and to the point development blogs.',
+//     link: `${hostname}/feed.${ext}`,
+//   }
 
-  posts = await $content(filePath)
-    .where({ published: true })
-    .sortBy('title')
-    .fetch()
+//   posts = await $content(filePath)
+//     .where({ published: true })
+//     .sortBy('title')
+//     .fetch()
 
-  for (const post of posts) {
-    const feedItem = await constructFeedItem(post, filePath, hostname)
+//   for (const post of posts) {
+//     const feedItem = await constructFeedItem(post, filePath, hostname)
 
-    feed.addItem(feedItem)
-  }
+//     feed.addItem(feedItem)
+//   }
 
-  return feed
-}
+//   return feed
+// }
 
 export default {
   target: 'static',
@@ -75,9 +75,9 @@ export default {
   buildModules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
-    '@nuxtjs/google-analytics',
     '@nuxt/content',
-    '@nuxtjs/feed',
+    // '@nuxtjs/google-analytics',
+    // '@nuxtjs/feed',
   ],
   modules: [],
   build: {},
@@ -93,24 +93,24 @@ export default {
       prism: { theme: 'prism-themes/themes/prism-one-dark.css' },
     },
   },
-  googleAnalytics: {
-    id: 'UA-177960351-3',
-    checkDuplicatedScript: true,
-  },
-  feed: [
-    {
-      path: '/feed.xml',
-      create,
-      cacheTime: 1000 * 60 * 15,
-      type: 'rss2',
-      data: ['blogs', 'xml'],
-    },
-  ],
-  hooks: {
-    'content:file:beforeInsert': (document) => {
-      if (document.extension === '.md') {
-        document.bodyPlainText = document.text
-      }
-    },
-  },
+  // googleAnalytics: {
+  //   id: 'UA-177960351-3',
+  //   checkDuplicatedScript: true,
+  // },
+  // feed: [
+  //   {
+  //     path: '/feed.xml',
+  //     create,
+  //     cacheTime: 1000 * 60 * 15,
+  //     type: 'rss2',
+  //     data: ['blogs', 'xml'],
+  //   },
+  // ],
+  // hooks: {
+  //   'content:file:beforeInsert': (document) => {
+  //     if (document.extension === '.md') {
+  //       document.bodyPlainText = document.text
+  //     }
+  //   },
+  // },
 }
